@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><style>
+    #light-icon {
+      display: inline;
+    }
+    #dark-icon {
+      display: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      #light-icon {
+        display: none;
+      }
+      #dark-icon {
+        display: inline;
+      }
+    }
+  </style><g id="light-icon"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><g clip-path="url(#SvgjsClipPath1368)"><rect width="1000" height="1000" fill="#f0e6d2"></rect><g transform="matrix(2.5,0,0,2.5,62.5,0)"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="350" height="400"><svg id="svg" viewBox="-30 0 350 400" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(20,20) scale(1.6)" fill="#00204a">
+                <path d="M7 122c-8,20 -10,46 -2,81 1,-27 4,-54 2,-81z"></path>
+                <path d="M56 70c-10,5 -19,12 -27,19 3,40 -9,73 -18,110 4,-7 8,-15 12,-22 16,-32 33,-63 33,-107z"></path>
+                <path d="M114 36c-7,5 -14,9 -21,13 -6,60 -37,89 -68,134 40,-51 80,-74 89,-147z"></path>
+                <path d="M157 60c-2,-21 -6,-42 -12,-60 -5,88 -40,112 -97,166 44,-34 84,-51 109,-106z"></path>
+                <path d="M150 150c3,-11 6,-23 7,-36 -39,39 -94,49 -135,85 41,-25 86,-28 128,-49z"></path>
+                <path d="M105 208c10,-5 18,-13 26,-21 -38,5 -73,5 -110,19 29,-4 55,-1 84,2z"></path>
+                <path d="M9 213c25,6 46,8 64,5 -12,-5 -53,-10 -64,-5z"></path>
+            </g>
+        </svg></svg></g></g><defs><clipPath id="SvgjsClipPath1368"><rect width="1000" height="1000" x="0" y="0" rx="250" ry="250"></rect></clipPath></defs></svg></g><g id="dark-icon"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><g clip-path="url(#SvgjsClipPath1369)"><rect width="1000" height="1000" fill="#f0e6d2"></rect><g transform="matrix(2.5,0,0,2.5,62.5,0)"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="350" height="400"><svg id="svg" viewBox="-30 0 350 400" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(20,20) scale(1.6)" fill="#00204a">
+                <path d="M7 122c-8,20 -10,46 -2,81 1,-27 4,-54 2,-81z"></path>
+                <path d="M56 70c-10,5 -19,12 -27,19 3,40 -9,73 -18,110 4,-7 8,-15 12,-22 16,-32 33,-63 33,-107z"></path>
+                <path d="M114 36c-7,5 -14,9 -21,13 -6,60 -37,89 -68,134 40,-51 80,-74 89,-147z"></path>
+                <path d="M157 60c-2,-21 -6,-42 -12,-60 -5,88 -40,112 -97,166 44,-34 84,-51 109,-106z"></path>
+                <path d="M150 150c3,-11 6,-23 7,-36 -39,39 -94,49 -135,85 41,-25 86,-28 128,-49z"></path>
+                <path d="M105 208c10,-5 18,-13 26,-21 -38,5 -73,5 -110,19 29,-4 55,-1 84,2z"></path>
+                <path d="M9 213c25,6 46,8 64,5 -12,-5 -53,-10 -64,-5z"></path>
+            </g>
+        </svg></svg></g></g><defs><clipPath id="SvgjsClipPath1369"><rect width="1000" height="1000" x="0" y="0" rx="250" ry="250"></rect></clipPath></defs></svg></g></svg>
