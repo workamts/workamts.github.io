@@ -514,7 +514,6 @@ main {
     margin-top: 50px;
 }
 
-
 #projects-heading {
     position: relative;
     width: 100%;
@@ -685,6 +684,7 @@ main {
     grid-template-columns: 1fr;
     gap: 40px;
     width: clamp(300px, 85vw, 1200px);
+    margin-top: 30px;
     margin-bottom: 60px;
 }
 
