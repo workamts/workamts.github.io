@@ -1,0 +1,1 @@
+window.ADMIN_KEY = "Amdiv#1609";
