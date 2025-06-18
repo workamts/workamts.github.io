@@ -44,8 +44,7 @@ This repository contains the source code for my personal portfolio, published at
 - HTML5 semántico / Semantic HTML5  
 - CSS3 con variables y diseño adaptativo / CSS3 with variables and adaptive design  
 - JavaScript moderno (ES6+) / Modern JavaScript (ES6+)  
-- Bootstrap 5  
-- Accesibilidad y SEO básico / Basic Accessibility & SEO
+- Accesibilidad web, optimización del rendimiento y SEO básico / Web accessibility, Performance Optimization and basic SEO
 
 ---
 
@@ -54,7 +53,6 @@ This repository contains the source code for my personal portfolio, published at
 | Proyecto / Project | Descripción / Description | Enlace / Link |
 |--------------------|---------------------------|----------------|
 | **EcoCafé**        | Tienda online ficticia para venta de café orgánico. Gestión de stock, carrito, y validación de compra. / Fictional coffee store with stock management, cart system, and checkout validation. | [Ver proyecto / View Project](https://workamts.github.io/proyectos/eco-cafe/) |
-| **Clon Netflix**   | Interfaz responsiva imitando a Netflix, uso de grid, scroll horizontal y diseño adaptable. / Responsive Netflix-style UI using grid, horizontal scroll and adaptive design. | [Ver proyecto / View Project](https://workamts.github.io/proyectos/clon-netflix/) |
 | **Otros en desarrollo...** | ¡Pronto más proyectos estarán disponibles! / More projects coming soon! | 🔧 |
 
 ---
