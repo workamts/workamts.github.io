@@ -62,9 +62,15 @@ This repository contains the source code for my personal portfolio, published at
 Si deseas trabajar conmigo o ver más de mis proyectos:  
 If you’d like to work with me or see more of my work:
 
-- 📧 Email: [tucorreo@ejemplo.com](mailto:tucorreo@ejemplo.com)  
-- 🌐 Portafolio / Portfolio: [https://workamts.github.io](https://workamts.github.io)  
-- 💼 LinkedIn / Upwork / Freelancer (opcional / optional)
+- 📫 **Email:** [workamts.dev@gmail.com](mailto:workamts.dev@gmail.com)  
+- 🌐 **Portfolio:** [https://workamts.github.io](https://workamts.github.io)  
+- 💼 **Upwork:** [https://www.upwork.com/freelancers/~0179a587deec28a4ba](https://www.upwork.com/freelancers/~0179a587deec28a4ba)  
+- 💻 **Freelancer:** [https://www.freelancer.com/u/Workamts](https://www.freelancer.com/u/Workamts)  
+- 🎯 **Fiverr:** [https://www.fiverr.com/workamts](https://www.fiverr.com/workamts)  
+- 🧑‍💼 **Workana:** [https://www.workana.com/freelancer/fcf206ab3db30166087855a1bce7e1d2](https://www.workana.com/freelancer/fcf206ab3db30166087855a1bce7e1d2)  
+- 🔗 **LinkedIn:** [https://www.linkedin.com/in/workamts](https://www.linkedin.com/in/workamts)  
+- 🌍 **We Work Remotely:** [https://weworkremotely.com](https://weworkremotely.com)  
+- 🌐 **Remote OK:** [https://remoteok.com/@workamt](https://remoteok.com/@workamt)
 
 ---
 
