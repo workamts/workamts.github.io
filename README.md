@@ -1,4 +1,4 @@
-# 💼 Portafolio Profesional - Anderson Tovar (workamts)
+# 💼 Portafolio Frontend Profesional – Anderson Tovar (workamts)
 
 Bienvenido a mi portafolio como **Desarrollador Frontend Independiente**.  
 Aquí encontrarás mis principales proyectos web, enfocados en calidad, rendimiento, diseño responsivo y buenas prácticas.
@@ -53,7 +53,7 @@ This repository contains the source code for my personal portfolio, published at
 | Proyecto / Project | Descripción / Description | Enlace / Link |
 |--------------------|---------------------------|----------------|
 | **EcoCafé**        | Tienda online ficticia para venta de café orgánico. Gestión de stock, carrito, y validación de compra. / Fictional coffee store with stock management, cart system, and checkout validation. | [Ver proyecto / View Project](https://workamts.github.io/proyectos/eco-cafe/) |
-| **Otros en desarrollo...** | ¡Pronto más proyectos estarán disponibles! / More projects coming soon! | 🔧 |
+| **Otros proyectos están en desarrollo y serán publicados pronto.** / Other projects are in development and will be published soon. | 🔧 |
 
 ---
 
@@ -79,3 +79,5 @@ If you’d like to work with me or see more of my work:
 ```bash
 git clone https://github.com/workamts/workamts.github.io.git
 cd workamts.github.io
+open index.html
+
