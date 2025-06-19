@@ -1,0 +1,13 @@
+[
+    {
+        "projectName": "EcoCafe",
+        "projectTypeSite": "Ecommerce",
+        "synopsis": "An online organic coffee store",
+        "description": "At EcoCafé, we are dedicated to offering the highest quality organic coffee, responsibly grown on Colombian soil. Each bean is harvested without pesticides or chemicals, respecting the natural cycles of the earth and supporting local coffee-growing communities.\nOur store combines flavor, sustainability, and tradition, providing each customer with a unique experience from the farm to the cup. In addition to our curated coffees, EcoCafé offers a complete experience: a detailed product page, a shopping cart, secure payments, and tools to help you register, log in, and shop with complete confidence.\nEcoCafé is not just coffee. It's a natural, conscious, and delicious lifestyle.",
+        "technologies": ["HTML", "CSS", "JavaScript"],
+        "projectThumbnail": "https://i.postimg.cc/d0bMQJFj/eco-Cafe-thumbnail.png",
+        "projectGeneralImage": "https://i.ibb.co/Ps58g6Pz/eco-Cafe-full-screenshot-pc.png",
+        "projectURL": "https://ejemplo.com",
+        "githubURL": "https://ejemplo.com"
+    }
+]

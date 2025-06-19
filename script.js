@@ -4,6 +4,7 @@
 const checkbox = document.querySelector('#open-menu');
 const mediaQuery = window.matchMedia('(max-width: 768px)');
 
+
 document.addEventListener("DOMContentLoaded", () => {
     const navLinks = document.querySelectorAll("#header-nav-list a");
 
@@ -171,6 +172,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+
 // --- Agregar proyectos dinamicamente y persistir en localStorage ---
 document.addEventListener('DOMContentLoaded', () => {
     const projectForm = document.getElementById('form-add-project');
@@ -278,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!project) return;
 
         while (panelContent.firstChild) panelContent.removeChild(panelContent.firstChild);
-        
+
         const intro = document.createElement('div');
         intro.className = 'panel__introduction';
 
@@ -363,8 +366,52 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     window.showProjectPanelByIndex = showProjectPanelByIndex;
 
+    // --- Botón para descargar projects.json actualizado ---
+    const downloadBtn = document.getElementById('download-projects');
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', () => {
+            const projects = JSON.parse(localStorage.getItem('portfolioProjects') || '[]');
+            const jsonString = JSON.stringify(projects, null, 2);
+            const blob = new Blob([jsonString], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'projects.json';
+            a.click();
+
+            URL.revokeObjectURL(url);
+        });
+    }
+
+
     function loadProjects() {
-        const projects = JSON.parse(localStorage.getItem('portfolioProjects') || '[]');
+        const localProjects = JSON.parse(localStorage.getItem('portfolioProjects') || '[]');
+
+        fetch('projects.json')
+            .then(res => res.json())
+            .then(jsonProjects => {
+                const merged = [...localProjects];
+
+                jsonProjects.forEach(jsonProj => {
+                    const exists = localProjects.some(lp => lp.projectName === jsonProj.projectName);
+                    if (!exists) merged.push(jsonProj);
+                });
+
+                saveProjects(merged);
+                renderProjects(merged);
+            })
+            .catch(err => {
+                if (localProjects.length) {
+                    renderProjects(localProjects);
+                } else {
+                    console.error('Error al cargar los proyectos:', err);
+                    projectsContainer.innerHTML = '<p style="color:red;">No se pudieron cargar los proyectos.</p>';
+                }
+            });
+    }
+
+    function renderProjects(projects) {
         projectsContainer.innerHTML = '';
         projects.forEach((project, idx) => {
             const card = createProjectCard(project, idx);
@@ -421,6 +468,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadProjects();
 });
+
+
+
+// --- SKILLS SECTION ---
+function duplicateSkills() {
+    const ul = document.querySelector('.skills__list--container');
+
+    // Elimina duplicados previos si ya los hay
+    const existingDuplicates = ul.querySelectorAll('.duplicated');
+    existingDuplicates.forEach(el => el.remove());
+
+    // Solo duplicar si ancho mínimo es 768px
+    if (window.innerWidth >= 768) {
+        const items = Array.from(ul.children);
+        items.forEach(item => {
+            const clone = item.cloneNode(true);
+            clone.classList.add('duplicated');
+            ul.appendChild(clone);
+        });
+    }
+}
+
+// Ejecutar al cargar y al redimensionar
+window.addEventListener('load', duplicateSkills);
+window.addEventListener('resize', duplicateSkills);
+
+
+
+// ---
+function focusNameInput(event) {
+    event.preventDefault(); // Evita el salto por defecto
+    const nameInput = document.getElementById('contactname');
+    if (nameInput) {
+        nameInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        nameInput.focus();
+    }
+}
 
 
 

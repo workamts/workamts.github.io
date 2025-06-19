@@ -68,7 +68,7 @@
                 </svg>
             </a>
         </div>
-        
+
         <!-- Hidden checkbox to toggle menu -->
         <input class="checked__box"
             type="checkbox"
@@ -112,6 +112,9 @@
                     <a href="#projects" role="menuitem" aria-label="Navigate to projects section">Projects</a>
                 </li>
                 <li class="header__nav--item" role="none">
+                    <a href="#skills" role="menuitem" aria-label="Navigate to projects section">Skills</a>
+                </li>
+                <li class="header__nav--item" role="none">
                     <a href="#contact-section" role="menuitem" aria-label="Navigate to contact section">Contact</a>
                 </li>
                 <li class="header__nav--item" role="none">
@@ -146,9 +149,8 @@
             </div>
         </section>
 
-        <!-- Personal Information Section -->
+        <!-- About Me Section -->
         <div id="info-container" aria-label="Personal information sections">
-            <!-- About Me Section -->
             <section id="about-me-section" aria-labelledby="about-me-title">
                 <h2 id="about-me-title">ABOUT ME</h2>
                 <p tabindex="0">
@@ -160,24 +162,6 @@
                 <p tabindex="0">
                     Every project is an opportunity to improve, explore new technologies, and provide efficient solutions. My goal is to build web products that not only work, but also excel.
                 </p>
-            </section>
-
-            <!-- Skills Section -->
-            <section class="content__skills" aria-labelledby="skills-title">
-                <h2 id="skills-title">MY SKILLS</h2>
-                <ul role="list" aria-label="List of technical skills">
-                    <li class="skills__list">HTML</li>
-                    <li class="skills__list">CSS</li>
-                    <li class="skills__list">JavaScript</li>
-                    <li class="skills__list">GitHub</li>
-                    <li class="skills__list">Visual Studio Code</li>
-                    <li class="skills__list">UI Design</li>
-                    <li class="skills__list">API Integration</li>
-                    <li class="skills__list">Performance Optimization</li>
-                    <li class="skills__list">Responsive Design</li>
-                    <li class="skills__list">Accessibility</li>
-                    <li class="skills__list">SEO Fundamentals</li>
-                </ul>
             </section>
         </div>
 
@@ -260,6 +244,7 @@
                 <input type="url" id="github-url" name="githubURL">
 
                 <button type="submit">Add Project</button>
+                <button id="download-projects" type="button">Descargar projects.json actualizado</button>
             </form>
 
             <!-- Project details side panel (dialog) -->
@@ -294,7 +279,7 @@
                         <!-- Detailed project description -->
                         <div class="panel__about--project">
                             <h4>About the project</h4>
-                            <p class="panel__description"></p>
+                            <div class="panel__description"></div>
                         </div>
 
                         <!-- Technologies used -->
@@ -315,77 +300,157 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact-section" aria-labelledby="contact-title">
-            <!-- Contact introduction  -->
-            <div id="contact-group-intro">
-                <h2 id="contact-title">CONTACT ME</h2>
-                <div class="contact__intro">
-                    <p id="contact-description">Want to work with me? Write to me!</p>
-                    <!-- Contact email -->
-                    <p id="text-info-contact">
-                        <span>Send me an email at:</span>
-                        <a id="contact-email" href="mailto:workamts.dev@gmail.com" onclick="focusNameInput(event)" aria-label="Send email to Anderson">workamts.dev@gmail.com</a>
-                    </p>
-                </div>
+        <!-- Skills Section -->
+        <section class="content__skills" id="skills" aria-labelledby="skills-title">
+            <h2 id="skills-title">SKILLS</h2>
+            <!-- Tajeta de habilidades -->
+            <div id="skills-cards">
+                <article class="skill__card">
+                    <div class="skill__card--header">
+                        <svg class="skill__icon--dev" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.25 6.75L22.5 12L17.25 17.25M6.75 17.25L1.5 12L6.75 6.75M14.25 3.75L9.75 20.25" stroke="CurrentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <h3 class="skill__card--title">Web Developer</h3>
+                    </div>
+                    <p class="skill__card--text">Design and development of modern, responsive, and accessible web applications, implementing the latest front-end technologies such as HTML5, CSS3, and JavaScript. I apply development best practices, performance optimization, and accessibility standards to deliver efficient, secure, and high-quality digital experiences.</p>
+                </article>
+                <article class="skill__card">
+                    <div class="skill__card--header">
+                        <svg class="skill__icon--advanced" width="24" height="24" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.4194 15.1694L17.25 21C18.2855 22.0355 19.9645 22.0355 21 21C22.0355 19.9645 22.0355 18.2855 21 17.25L15.1233 11.3733M11.4194 15.1694L13.9155 12.1383C14.2315 11.7546 14.6542 11.5132 15.1233 11.3733M11.4194 15.1694L6.76432 20.8219C6.28037 21.4096 5.55897 21.75 4.79768 21.75C3.39064 21.75 2.25 20.6094 2.25 19.2023C2.25 18.441 2.59044 17.7196 3.1781 17.2357L10.0146 11.6056M15.1233 11.3733C15.6727 11.2094 16.2858 11.1848 16.8659 11.2338C16.9925 11.2445 17.1206 11.25 17.25 11.25C19.7353 11.25 21.75 9.23528 21.75 6.75C21.75 6.08973 21.6078 5.46268 21.3523 4.89779L18.0762 8.17397C16.9605 7.91785 16.0823 7.03963 15.8262 5.92397L19.1024 2.64774C18.5375 2.39223 17.9103 2.25 17.25 2.25C14.7647 2.25 12.75 4.26472 12.75 6.75C12.75 6.87938 12.7555 7.00749 12.7662 7.13411C12.8571 8.20956 12.6948 9.39841 11.8617 10.0845L11.7596 10.1686M10.0146 11.6056L5.90901 7.5H4.5L2.25 3.75L3.75 2.25L7.5 4.5V5.90901L11.7596 10.1686M10.0146 11.6056L11.7596 10.1686M18.375 18.375L15.75 15.75M4.86723 19.125H4.87473V19.1325H4.86723V19.125Z" stroke="#0F172A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <h3 class="skill__card--title">Funcionalidades Avanzadas</h3>
+                    </div>
+                    <p class="skill__card--text">Implementation of key features for complete web projects: authentication systems (login and logout), forms with custom validation, dynamic shopping carts, simulated checkout processes, and user management. All with robust JavaScript logic, a focus on user experience, and LocalStorage storage for data persistence.</p>
+                </article>
             </div>
 
-            <form action="https://formspree.io/f/tu-endpoint" method="POST"  data-reply-to="email" id="contact-form"  novalidate aria-label="Contact form" autocomplete="on">
+            <!-- Cinta deslizante de habilidades -->
+            <div class="skills__scroll--container">
+                <ul class="skills__list--container" role="list" aria-label="List of technical skills">
+                    <li class="skills__list">HTML</li>
+                    <li class="skills__list">CSS</li>
+                    <li class="skills__list">JavaScript</li>
+                    <li class="skills__list">GitHub</li>
+                    <li class="skills__list">Visual Studio Code</li>
+                    <li class="skills__list">UI Design</li>
+                    <li class="skills__list">API Integration</li>
+                    <li class="skills__list">Performance Optimization</li>
+                    <li class="skills__list">Responsive Design</li>
+                    <li class="skills__list">Accessibility</li>
+                    <li class="skills__list">SEO Fundamentals</li>
+                </ul>
+            </div>
+        </section>
 
-                <!-- Full Name -->
-                <div class="input__group">
-                    <label for="contactname" aria-label="Full name, required">Full name <span aria-hidden="true">*</span></label>
-                    <input class="contact__form--field" type="text" id="contactname"
-                        name="Name"
-                        placeholder="Your full name"
-                        required
-                        minlength="3"
-                        maxlength="50"
-                        pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$"
-                        autocomplete="name"
-                        aria-required="true"
-                        aria-describedby="name-help">
-                    <small id="name-help">Enter your real name. Letters and spaces only.</small>
+        <!-- Contact Section -->
+        <section id="contact-section" aria-labelledby="contact-title">
+            <h2 id="contact-title">CONTACT ME</h2>
+            <div class="contact__content">
+                <div class="contact__info">
+                    <h2 class="contact__title">Let's talk!</h2>
+                    <p class="contact__description">Do you have a project in mind? I'm available to work on new projects and collaborations.</p>
+                    <div class="contact__socials">
+                        <ul class="contact__methods" role="list" aria-label="Información de contacto">
+                            <li class="contact__item">
+                                <svg class="contact__icon" role="img" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                                    <path d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
+                                </svg>
+                                <div class="contact__text--container">
+                                    <span>Email</span>
+                                    <a href="#contactname">workamts.dev@gmail.com</a>
+                                </div>
+                            </li>
+                            <li class="contact__item">
+                                <svg class="contact__icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <title>WhatsApp</title>
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="currentColor"/>
+                                </svg>
+                                <div class="contact__text--container">
+                                    <span>WhatsApp</span>
+                                    <a href="https://wa.me/573001234567" target="_blank" class="contact__text">+57 300 123 4567</a>
+                                </div>
+                            </li>
+                            <li class="contact__item">
+                                <svg class="contact__icon" role="img" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24">
+                                    <g>
+                                        <rect fill="none" height="24" width="24"/>
+                                    </g>
+                                    <g>
+                                        <path d="M12,2c-4.2,0-8,3.22-8,8.2c0,3.32,2.67,7.25,8,11.8c5.33-4.55,8-8.48,8-11.8C20,5.22,16.2,2,12,2z M12,12c-1.1,0-2-0.9-2-2 c0-1.1,0.9-2,2-2c1.1,0,2,0.9,2,2C14,11.1,13.1,12,12,12z" fill="currentColor">
+                                    </g>
+                                </svg>
+                                <div class="contact__text--container">
+                                    <span>Location</span>
+                                    <small class="contact__text">Funza, Colombia</small>
+                                </div>
+                            </li>
+                        </ul>
+                        <svg id="contact-social-icon-chat" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
+                            <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                            <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9 9 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.4 10.4 0 0 1-.524 2.318l-.003.011a11 11 0 0 1-.244.637c-.079.186.074.394.273.362a22 22 0 0 0 .693-.125m.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6-3.004 6-7 6a8 8 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a11 11 0 0 0 .398-2"/>
+                        </svg>
+                    </div>
                 </div>
+                <!-- Contact form-->
+                <form id="contact-form" action="https://formspree.io/f/tu-endpoint" method="POST"  data-reply-to="email" novalidate aria-label="Contact form" autocomplete="on">
+                    <!-- Full Name -->
+                    <div class="input__group">
+                        <label for="contactname" aria-label="Full name, required">Full name <span aria-hidden="true">*</span></label>
+                        <input class="contact__form--field" type="text" id="contactname"
+                            name="Name"
+                            placeholder="Your full name"
+                            required
+                            minlength="3"
+                            maxlength="50"
+                            pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$"
+                            autocomplete="name"
+                            aria-required="true"
+                            aria-describedby="name-help">
+                        <small id="name-help">Enter your real name. Letters and spaces only.</small>
+                    </div>
 
-                <!-- Email -->
-                <div class="input__group">
-                    <label for="contactemail">Email address <span aria-hidden="true">*</span></label>
-                    <input class="contact__form--field" type="contactemail" id="contactemail"
-                        name="Email"
-                        placeholder="youremail@example.com"
-                        required
-                        pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-                        autocomplete="email"
-                        inputmode="email"
-                        aria-required="true"
-                        aria-describedby="email-help">
-                    <small id="email-help">We’ll never share your email.</small>
-                </div>
+                    <!-- Email -->
+                    <div class="input__group">
+                        <label for="contactemail">Email address <span aria-hidden="true">*</span></label>
+                        <input class="contact__form--field" type="contactemail" id="contactemail"
+                            name="Email"
+                            placeholder="youremail@example.com"
+                            required
+                            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                            autocomplete="email"
+                            inputmode="email"
+                            aria-required="true"
+                            aria-describedby="email-help">
+                        <small id="email-help">We’ll never share your email.</small>
+                    </div>
 
-                <!-- Message -->
-                <div class="input__group">
-                    <label for="contactmessage">Message <span aria-hidden="true">*</span></label>
-                    <textarea class="contact__form--field" id="contactmessage"
-                        name="Message"
-                        rows="5"
-                        placeholder="How can I help you?"
-                        required
-                        minlength="10"
-                        maxlength="1000"
-                        aria-required="true"
-                        aria-describedby="message-help"></textarea>
-                    <small id="message-help">Please write a clear message. Minimum 10 characters.</small>
-                </div>
+                    <!-- Message -->
+                    <div class="input__group">
+                        <label for="contactmessage">Message <span aria-hidden="true">*</span></label>
+                        <textarea class="contact__form--field" id="contactmessage"
+                            name="Message"
+                            rows="5"
+                            placeholder="How can I help you?"
+                            required
+                            minlength="10"
+                            maxlength="1000"
+                            aria-required="true"
+                            aria-describedby="message-help"></textarea>
+                        <small id="message-help">Please write a clear message. Minimum 10 characters.</small>
+                    </div>
 
-                <!-- Submit Button -->
-                <div id="contact-button-container">
-                    <button class="contact__form--btn" type="submit" aria-label="Send contact form" title="Click to send your message">Send</button>
-                </div>
+                    <!-- Submit Button -->
+                    <div id="contact-button-container">
+                        <button class="contact__form--btn" type="submit" aria-label="Send contact form" title="Click to send your message">Send</button>
+                    </div>
 
-                <!-- Status message area (for confirmation or errors) -->
-                <div id="form-status" role="status" aria-live="polite"></div>
-            </form>
+                    <!-- Status message area (for confirmation or errors) -->
+                    <div id="form-status" role="status" aria-live="polite"></div>
+                </form>
+            </div>
+
         </section>
     </main>
 
@@ -397,14 +462,16 @@
                 <h5 id="info-text">SOCIAL</h5>
                 <!-- List of social and work platforms -->
                 <ul id="footer-social-list">
-                    <li><a href="https://www.upwork.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Upwork profile">Upwork</a></li>
-                    <li><a href="https://www.freelancer.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Freelancer profile">Freelancer.com</a></li>
-                    <li><a href="https://www.fiverr.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Fiverr profile">Fiverr</a></li>
-                    <li><a href="https://www.workana.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Workana profile">Workana</a></li>
-                    <li><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn profile">LinkedIn</a></li>
-                    <li><a href="https://weworkremotely.com" target="_blank" rel="noopener noreferrer" aria-label="Visit We Work Remotely">We Work Remotely</a></li>
-                    <li><a href="https://remoteok.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Remote OK">Remote OK</a></li>
-                    <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub profile">GitHub</a></li>
+                    <li><a href="https://github.com/workamts" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub profile">GitHub</a></li>
+                    <li><a href="https://www.upwork.com/freelancers/~0179a587deec28a4ba" target="_blank" rel="noopener noreferrer" aria-label="Visit Upwork profile">Upwork</a></li>
+                    <li><a href="https://www.freelancer.com/u/Workamts" target="_blank" rel="noopener noreferrer" aria-label="Visit Freelancer profile">Freelancer.com</a></li>
+                    <li><a href="https://es.fiverr.com/workamts" target="_blank" rel="noopener noreferrer" aria-label="Visit Fiverr profile">Fiverr</a></li>
+                    <li><a href="https://www.workana.com/freelancer/fcf206ab3db30166087855a1bce7e1d2" target="_blank" rel="noopener noreferrer" aria-label="Visit Workana profile">Workana</a></li>
+                    <li><a href="www.linkedin.com/in/workamts" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn profile">LinkedIn</a></li>
+                    <li>
+                        <span>available for remote work via</span><a href="https://weworkremotely.com" target="_blank" rel="noopener noreferrer" aria-label="Visit We Work Remotely">We Work Remotely</a>
+                    </li>
+                    <li><a href="https://remoteok.com/@workamt" target="_blank" rel="noopener noreferrer" aria-label="Visit Remote OK">Remote OK</a></li>
                 </ul>
             </div>
 
@@ -413,8 +480,8 @@
                 <ul id="footer-links">
                     <li><a href="#" aria-label="Read terms and conditions">Terms & Conditions</a></li>
                     <li><a href="#" aria-label="Read privacy policy">Privacy Policy</a></li>
-                    <li><a href="#contact-section" aria-label="Contact page">Contact</a></li>
-                    <li><a href="#" aria-label="Sitemap page">Sitemap</a></li>
+                    <li><a href="#contact-section" aria-label="Contact page">Cookies</a></li>
+                    <li><a href="#" aria-label="Sitemap page">Legal Notice</a></li>
                 </ul>
             </nav>
         </div>
@@ -424,7 +491,6 @@
             <p>&copy; 2025 Created by Anderson - Workamts. All rights reserved.</p>
         </div>
     </footer>
-
 
     <!-- Scripts -->
     <script src="password-settings.js" defer></script>
