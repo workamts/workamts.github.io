@@ -399,18 +399,35 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 30px;
-    width: 100%;
+    width: clamp(300px, 85vw, 1200px);
     padding-inline: 10px;
     padding-bottom: 90px;
     border-top: 2px solid var(--color-quinary);
     margin-top: 30px;
 }
 
+#about-me-image {
+    min-width: 250px;
+    height: auto;
+    padding: 30px;
+    border: 5px solid var(--color-quaternary);
+    border-radius: 50%;
+    margin-top: 50px;
+    color: var(--color-quaternary);
+}
+
+#about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
 #about-me-title {
-    padding-top: 50px;
     font-size: 2rem;
     font-weight: 600;
-    color: var(--color-quaternary);
+    letter-spacing: .1rem;
+    color: var(--color-tertiary);
 }
 
 #about-me-container-text {
@@ -425,6 +442,35 @@ main {
     letter-spacing: .1rem;
     line-height: 1.6rem;
     text-align: left;
+}
+
+#group-icons {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    width: 100%;
+}
+
+#group-icons svg,
+#group-icons-css svg {
+    width: 64px;
+    height: auto;
+    color: var(--color-quinary);
+}
+
+#group-icons-html-css {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#group-icons-css {
+    position: absolute;
+    bottom: 0;
+    right: -15px;
+    z-index: -1;
+    width: 32px !important;
+    height: auto;
 }
 
 
@@ -453,15 +499,45 @@ main {
 }
 
 @media (min-width: 992px) {
-    #about-me-container-text {
+    #about-me-section {
+        position: relative;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 50px;
+        height: 100vh;
+    }
+
+    #about-me-image {
+        margin-left: 30px;
+    }
+
+    #group-icons {
+        position: absolute;
+        top: 350px;
+        left: 130px;
         flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
         gap: 30px;
+        width: max-content;
+    }
+
+    #about-content {
+        align-items: flex-start;
+        height: 100%;
+        padding: 30px 30px 0 50px;
+        border-left: 4px solid var(--color-secondary);
+        margin-top: 50px;
+    }
+
+    #about-me-title {
+        font-size: 2.5rem;
+    }
+
+    #about-me-container-text {
+        width: auto;
     }
 
     #about-me-container-text p {
-        text-align: center;
+        text-align: start;
     }
 
     #about-me-container-text :nth-child(1),
