@@ -114,7 +114,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 100vw;
     height: 70px;
     padding-inline: clamp(20px, 5vw, 30px);
     background-color: var(--color-primary);
