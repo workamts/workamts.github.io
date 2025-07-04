@@ -9,5 +9,16 @@
         "projectGeneralImage": "https://iili.io/FuMPncl.png",
         "projectURL": "https://workamts.github.io/ecocafe",
         "githubURL": "https://github.com/workamts/ecocafe"
+    },
+    {
+        "projectName": "JavaScript From Scratch",
+        "projectTypeSite": "Landing Page",
+        "synopsis": "A practical and beginner-friendly course to learn JavaScript from zero.",
+        "description": "JavaScript From Scratch is an introductory course for those looking to begin their journey into web development. It provides a clear and structured path, requiring no prior programming experience.\nThe landing page presents a compelling visual experience with modern design, a fixed header, and clear navigation that guides the user through all essential sections: Why Learn JavaScript, Syllabus, Benefits, Offers, FAQ, Testimonials, and a final CTA.\nEach module in the syllabus is broken down into stages such as Programming Fundamentals, DOM Manipulation, Functions, and Asynchronous Programming. Benefits like certifications, expert guidance, and constant updates are highlighted to boost user trust.\nAdditionally, the site features testimonials from real students, a special limited-time offer with pricing comparison, and accessible support channels via email and WhatsApp. The footer closes with branding, support info, and free resources to keep users engaged.\nThis project demonstrates practical HTML, CSS, and JavaScript skills with responsive layout, semantic structure, accessibility best practices, and SEO-ready markup.",
+        "technologies": ["HTML", "CSS", "JavaScript"],
+        "projectThumbnail": "https://ik.imagekit.io/workamts/pc-hero-section.png?updatedAt=1751647148899",
+        "projectGeneralImage": "https://ik.imagekit.io/workamts/pc-full-view.png?updatedAt=1751647273358",
+        "projectURL": "https://workamts.github.io/javascript-from-scratch",
+        "githubURL": "https://github.com/workamts/javascript-from-scratch"
     }
 ]
