@@ -1,14 +1,14 @@
 [
     {
-        "projectName": "EcoCafe",
-        "projectTypeSite": "Ecommerce",
-        "synopsis": "An online organic coffee store",
-        "description": "At EcoCafé, we are dedicated to offering the highest quality organic coffee, responsibly grown on Colombian soil. Each bean is harvested without pesticides or chemicals, respecting the natural cycles of the earth and supporting local coffee-growing communities.\nOur store combines flavor, sustainability, and tradition, providing each customer with a unique experience from the farm to the cup. In addition to our curated coffees, EcoCafé offers a complete experience: a detailed product page, a shopping cart, secure payments, and tools to help you register, log in, and shop with complete confidence.\nEcoCafé is not just coffee. It's a natural, conscious, and delicious lifestyle.",
-        "technologies": ["HTML", "CSS", "JavaScript"],
-        "projectThumbnail": "https://i.postimg.cc/26s5t3cg/127-0-0-1-5500-index-html-7.png",
-        "projectGeneralImage": "https://iili.io/FuMPncl.png",
-        "projectURL": "https://workamts.github.io/ecocafe",
-        "githubURL": "https://github.com/workamts/ecocafe"
+        "projectName": "Pensieve",
+        "projectTypeSite": "SPA (Single Page Application)",
+        "synopsis": "Escribe lo que piensas. Guarda lo que sientes.",
+        "description": "Pensadero is a personal journal-style web application that encourages free writing and introspection. It works like a SPA with automatic local storage, allowing you to save written or spoken thoughts offline. Its minimalist design promotes focus and privacy, including options such as text blur, persistent light/dark mode, and time stamps for each entry.\nThe project was developed using pure HTML, CSS, and JavaScript, without using any external frameworks. It stands out for its focus on user experience, basic accessibility, custom visual effects, and a clean, modular code structure. Pensadero is a simple yet emotionally connected approach to digital well-being.",
+        "technologies": ["HTML", "CSS", "JavaScript", "Web Speech API"],
+        "projectThumbnail": "https://ik.imagekit.io/workamts/pc-light-default-view.png?updatedAt=1752109034261",
+        "projectGeneralImage": "https://ik.imagekit.io/workamts/pc-dark-default-view.png?updatedAt=1752109034267",
+        "projectURL": "https://workamts.github.io/pensieve/",
+        "githubURL": "https://github.com/workamts/pensieve"
     },
     {
         "projectName": "JavaScript From Scratch",
@@ -18,7 +18,18 @@
         "technologies": ["HTML", "CSS", "JavaScript"],
         "projectThumbnail": "https://ik.imagekit.io/workamts/pc-hero-section.png?updatedAt=1751647148899",
         "projectGeneralImage": "https://ik.imagekit.io/workamts/pc-full-view.png?updatedAt=1751647273358",
-        "projectURL": "https://workamts.github.io/javascript-from-scratch",
+        "projectURL": "https://workamts.github.io/javascript-from-scratch/",
         "githubURL": "https://github.com/workamts/javascript-from-scratch"
+    },
+    {
+        "projectName": "EcoCafe",
+        "projectTypeSite": "Ecommerce",
+        "synopsis": "An online organic coffee store",
+        "description": "At EcoCafé, we are dedicated to offering the highest quality organic coffee, responsibly grown on Colombian soil. Each bean is harvested without pesticides or chemicals, respecting the natural cycles of the earth and supporting local coffee-growing communities.\nOur store combines flavor, sustainability, and tradition, providing each customer with a unique experience from the farm to the cup. In addition to our curated coffees, EcoCafé offers a complete experience: a detailed product page, a shopping cart, secure payments, and tools to help you register, log in, and shop with complete confidence.\nEcoCafé is not just coffee. It's a natural, conscious, and delicious lifestyle.",
+        "technologies": ["HTML", "CSS", "JavaScript"],
+        "projectThumbnail": "https://i.postimg.cc/26s5t3cg/127-0-0-1-5500-index-html-7.png",
+        "projectGeneralImage": "https://iili.io/FuMPncl.png",
+        "projectURL": "https://workamts.github.io/ecocafe/",
+        "githubURL": "https://github.com/workamts/ecocafe"
     }
 ]

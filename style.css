@@ -1271,6 +1271,8 @@ body.panel-open {
     transform: perspective(1000px) translateY(8px) rotateY(15deg);
 }
 
+
+
 .skill__card--header {
     display: flex;
     flex-direction: row;
@@ -1323,17 +1325,9 @@ body.panel-open {
     gap: 20px;
 }
 
-.skills__list {
-    width: max-content;
-    padding: 7px 20px;
-    border: 1px solid var(--color-octonary);
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: .1rem;
-    text-align: center;
-    color: var(--color-senary);
-    background: var(--color-quinary);
+.skills__item {
+    width: 48px;
+    height: 48px;
     transition: color .4s ease, background-color .4s ease;
 }
 
