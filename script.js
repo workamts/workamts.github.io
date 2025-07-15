@@ -36,6 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
+
+
+
+
 /*---------- PROYECTOS ----------*/
 
 // --- Add Project Button ---
@@ -63,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+
 // Card positioning.
 function applyCardLayout() {
     const cards = document.querySelectorAll(".project__card");
@@ -71,6 +77,7 @@ function applyCardLayout() {
         card.classList.add(`layout-${layoutNumber}`);
     });
 }
+
 
 // Animación de imagen en tarjetas
 function applyCardImageAnimation(card) {
@@ -203,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function createProjectCard(project, index) {
-        const { projectName, projectTypeSite, synopsis, description, technologies, projectThumbnail, projectGeneralImage, projectURL, githubURL } = project;
+        const { projectName, synopsis, projectThumbnail } = project;
         const card = document.createElement('div');
         card.className = 'project__card';
         card.setAttribute('role', 'article');
@@ -230,44 +237,45 @@ document.addEventListener('DOMContentLoaded', () => {
         p.className = 'project__synopsis';
         p.textContent = synopsis || '';
 
-        const techList = createTechList(technologies, 'project__technologies--used');
+        desc.appendChild(h4);
+        desc.appendChild(p);
 
-        const a = document.createElement('a');
-        a.className = 'view__project';
-        a.href = 'javascript:void(0);';
-        a.setAttribute('data-index', index);
-        a.setAttribute('aria-label', `View details of ${projectName || ''}`);
-
-        const span = document.createElement('span');
-        span.className = 'text';
-        span.textContent = 'Ver proyecto';
-
-        const svgNS = "http://www.w3.org/2000/svg";
-        const svg = document.createElementNS(svgNS, 'svg');
+        // Flecha en la esquina superior derecha (SVG creado por nodos)
+        const arrow = document.createElement('span');
+        arrow.className = 'project__arrow';
+        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.setAttribute('width', '24');
+        svg.setAttribute('height', '24');
+        svg.setAttribute('viewBox', '0 0 24 24');
         svg.setAttribute('fill', 'none');
         svg.setAttribute('stroke', 'currentColor');
         svg.setAttribute('stroke-width', '2');
-        svg.setAttribute('viewBox', '0 0 24 24');
-        svg.setAttribute('width', '24');
-        svg.setAttribute('height', '24');
-        svg.setAttribute('aria-hidden', 'true');
-        svg.setAttribute('focusable', 'false');
-        const path = document.createElementNS(svgNS, 'path');
-        path.setAttribute('stroke-linecap', 'round');
-        path.setAttribute('stroke-linejoin', 'round');
-        path.setAttribute('d', 'M9 5l7 7-7 7');
-        svg.appendChild(path);
 
-        a.appendChild(span);
-        a.appendChild(svg);
+        const path1 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path1.setAttribute('d', 'M7 7L17 7L17 17');
+        path1.setAttribute('stroke-linecap', 'round');
+        path1.setAttribute('stroke-linejoin', 'round');
 
-        desc.appendChild(h4);
-        desc.appendChild(p);
-        desc.appendChild(techList);
-        desc.appendChild(a);
+        const path2 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path2.setAttribute('d', 'M7 17L17 7');
+        path2.setAttribute('stroke-linecap', 'round');
+        path2.setAttribute('stroke-linejoin', 'round');
+
+        svg.appendChild(path1);
+        svg.appendChild(path2);
+        arrow.appendChild(svg);
 
         card.appendChild(imgContainer);
         card.appendChild(desc);
+        card.appendChild(arrow);
+
+        // Toda la tarjeta abre el panel lateral
+        card.addEventListener('click', () => {
+            window.showProjectPanelByIndex(index);
+            document.getElementById('project-wrapper-details').classList.add('active');
+            document.getElementById('project-details-panel').classList.add('active');
+            document.body.classList.add('panel-open');
+        });
 
         applyCardImageAnimation(card);
 
@@ -470,32 +478,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-// --- SKILLS SECTION ---
-function duplicateSkills() {
-    const ul = document.querySelector('.skills__list--container');
-
-    // Elimina duplicados previos si ya los hay
-    const existingDuplicates = ul.querySelectorAll('.duplicated');
-    existingDuplicates.forEach(el => el.remove());
-
-    // Solo duplicar si ancho mínimo es 768px
-    if (window.innerWidth >= 768) {
-        const items = Array.from(ul.children);
-        items.forEach(item => {
-            const clone = item.cloneNode(true);
-            clone.classList.add('duplicated');
-            ul.appendChild(clone);
-        });
-    }
-}
-
-// Ejecutar al cargar y al redimensionar
-window.addEventListener('load', duplicateSkills);
-window.addEventListener('resize', duplicateSkills);
-
-
-
 // ---
 function focusNameInput(event) {
     event.preventDefault(); // Evita el salto por defecto
@@ -524,6 +506,20 @@ function focusNameInput(event) {
         input.classList.toggle('invalid', !isValid);
         input.setAttribute('aria-invalid', !isValid);
     }
+
+    // Mostrar/ocultar el <small> solo cuando el input tiene foco
+    contactInputs.forEach(input => {
+        const small = input.parentElement.querySelector('small');
+        if (!small) return;
+        small.style.display = 'none'; // Oculta por defecto
+
+        input.addEventListener('focus', () => {
+            small.style.display = 'block';
+        });
+        input.addEventListener('blur', () => {
+            small.style.display = 'none';
+        });
+    });
 
     // Validar inputs SOLO del formulario de contacto usando la clase
     contactInputs.forEach(input => {
