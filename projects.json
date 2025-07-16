@@ -1,12 +1,10 @@
 [
     {
         "projectName": "Pensieve",
-        "projectTypeSite": "SPA (Single Page Application)",
+        "projectTypeSite": "SPA",
         "synopsis": "Escribe lo que piensas. Guarda lo que sientes.",
-        "description": "Pensadero is a personal journal-style web application that encourages free writing and introspection. It works like a SPA with automatic local storage, allowing you to save written or spoken thoughts offline. Its minimalist design promotes focus and privacy, including options such as text blur, persistent light/dark mode, and time stamps for each entry.\nThe project was developed using pure HTML, CSS, and JavaScript, without using any external frameworks. It stands out for its focus on user experience, basic accessibility, custom visual effects, and a clean, modular code structure. Pensadero is a simple yet emotionally connected approach to digital well-being.",
-        "technologies": ["HTML", "CSS", "JavaScript", "Web Speech API"],
+        "technologies": ["HTML", "CSS", "JavaScript"],
         "projectThumbnail": "https://ik.imagekit.io/workamts/pc-light-default-view.png?updatedAt=1752109034261",
-        "projectGeneralImage": "https://ik.imagekit.io/workamts/pc-dark-default-view.png?updatedAt=1752109034267",
         "projectURL": "https://workamts.github.io/pensieve/",
         "githubURL": "https://github.com/workamts/pensieve"
     },
@@ -14,10 +12,8 @@
         "projectName": "JavaScript From Scratch",
         "projectTypeSite": "Landing Page",
         "synopsis": "A practical and beginner-friendly course to learn JavaScript from zero.",
-        "description": "JavaScript From Scratch is an introductory course for those looking to begin their journey into web development. It provides a clear and structured path, requiring no prior programming experience.\nThe landing page presents a compelling visual experience with modern design, a fixed header, and clear navigation that guides the user through all essential sections: Why Learn JavaScript, Syllabus, Benefits, Offers, FAQ, Testimonials, and a final CTA.\nEach module in the syllabus is broken down into stages such as Programming Fundamentals, DOM Manipulation, Functions, and Asynchronous Programming. Benefits like certifications, expert guidance, and constant updates are highlighted to boost user trust.\nAdditionally, the site features testimonials from real students, a special limited-time offer with pricing comparison, and accessible support channels via email and WhatsApp. The footer closes with branding, support info, and free resources to keep users engaged.\nThis project demonstrates practical HTML, CSS, and JavaScript skills with responsive layout, semantic structure, accessibility best practices, and SEO-ready markup.",
         "technologies": ["HTML", "CSS", "JavaScript"],
         "projectThumbnail": "https://ik.imagekit.io/workamts/pc-hero-section.png?updatedAt=1751647148899",
-        "projectGeneralImage": "https://ik.imagekit.io/workamts/pc-full-view.png?updatedAt=1751647273358",
         "projectURL": "https://workamts.github.io/javascript-from-scratch/",
         "githubURL": "https://github.com/workamts/javascript-from-scratch"
     },
@@ -25,10 +21,8 @@
         "projectName": "EcoCafe",
         "projectTypeSite": "Ecommerce",
         "synopsis": "An online organic coffee store",
-        "description": "At EcoCafé, we are dedicated to offering the highest quality organic coffee, responsibly grown on Colombian soil. Each bean is harvested without pesticides or chemicals, respecting the natural cycles of the earth and supporting local coffee-growing communities.\nOur store combines flavor, sustainability, and tradition, providing each customer with a unique experience from the farm to the cup. In addition to our curated coffees, EcoCafé offers a complete experience: a detailed product page, a shopping cart, secure payments, and tools to help you register, log in, and shop with complete confidence.\nEcoCafé is not just coffee. It's a natural, conscious, and delicious lifestyle.",
         "technologies": ["HTML", "CSS", "JavaScript"],
         "projectThumbnail": "https://i.postimg.cc/26s5t3cg/127-0-0-1-5500-index-html-7.png",
-        "projectGeneralImage": "https://iili.io/FuMPncl.png",
         "projectURL": "https://workamts.github.io/ecocafe/",
         "githubURL": "https://github.com/workamts/ecocafe"
     }
