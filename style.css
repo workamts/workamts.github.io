@@ -368,7 +368,7 @@ main {
 #hero-focus {
     position: relative;
     height: auto;
-    margin-top: 150px;
+    margin-top: 20vh;
 }
 
 #hero-logo {
@@ -389,7 +389,6 @@ main {
 #hero-links {
     position: absolute;
     bottom: 15px;
-    right: 0;
     display: flex;
     gap: 30px;
 }
@@ -420,6 +419,15 @@ main {
 .social-btn:focus span {
     border-bottom: 1px solid var(--color-tertiary);
 }
+
+
+/*------------- MEDIA QUERIES: HERO TABLET AND DESKTOP -------------*/
+@media (min-width: 768px) {
+    #hero-links {
+        right: 0;
+    }
+}
+/*------------- END MEDIA QUERIES -------------*/
 
 
 
