@@ -1,9 +1,17 @@
-/*---------- MENU ----------*/
+/*==============================
+=   Portafolio - JavaScript
+=   File: script.js
+==============================*/
 
-// Delete scrollX and close menu action.
+
+
+/*======================================
+=   DELETE SCROLLX AND
+=   CLOSE MENU ACTION
+======================================*/
+
 const checkbox = document.querySelector('#open-menu');
 const mediaQuery = window.matchMedia('(max-width: 768px)');
-
 
 document.addEventListener("DOMContentLoaded", () => {
     const navLinks = document.querySelectorAll("#header-nav-list a");
@@ -39,11 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+/*======================================
+=   PROJECTS
+======================================*/
 
-
-/*---------- PROYECTOS ----------*/
-
-// Card positioning.
+// Card positioning
 function applyCardLayout() {
     const cards = document.querySelectorAll(".project__card");
     cards.forEach((card, index) => {
@@ -53,7 +61,7 @@ function applyCardLayout() {
 }
 
 
-// Animación de imagen en tarjetas
+// Image animation on cards
 function applyCardImageAnimation(card) {
     const image = card.querySelector('.project__thumbnail');
     if (!image) return;
@@ -80,8 +88,7 @@ function applyCardImageAnimation(card) {
 }
 
 
-
-// --- Agregar proyectos dinamicamente y persistir en localStorage ---
+// Add projects dynamically and persist them in local storage
 document.addEventListener('DOMContentLoaded', () => {
     const projectsContainer = document.getElementById('projects-container');
 
@@ -123,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
         card.className = 'project__card';
         card.setAttribute('role', 'article');
 
-        // Imagen principal
+        // Main image
         const imgContainer = document.createElement('div');
         imgContainer.className = 'project__container--image';
         const img = document.createElement('img');
@@ -134,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
         img.decoding = 'async';
         imgContainer.appendChild(img);
 
-        // Descripción y datos
+        // Description and data
         const desc = document.createElement('div');
         desc.className = 'project__description';
 
@@ -150,16 +157,16 @@ document.addEventListener('DOMContentLoaded', () => {
         p.className = 'project__synopsis';
         p.textContent = project.synopsis || '';
 
-        // Tecnologías
+        // Technologies
         const techList = createTechList(project.technologies || []);
 
-        // SVG de GitHub
+        // SVG from GitHub
         const githubSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         githubSvg.classList.add('project__github');
         githubSvg.setAttribute('width', '40');
         githubSvg.setAttribute('height', '40');
         githubSvg.setAttribute('viewBox', '0 0 20 20');
-        githubSvg.setAttribute('aria-label', 'Ir al repositorio de GitHub');
+        githubSvg.setAttribute('aria-label', 'Go to the GitHub repository');
         githubSvg.style.cursor = 'pointer';
 
         const githubPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
@@ -174,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Contenedor de tecnologías y GitHub
+        // Container technologies and GitHub
         const techGithubContainer = document.createElement('div');
         techGithubContainer.className = 'project__container--tech-github';
         techGithubContainer.appendChild(techList);
@@ -205,13 +212,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Añadir elementos a la descripción
         desc.appendChild(h4);
         desc.appendChild(spanType);
         desc.appendChild(p);
         desc.appendChild(techGithubContainer);
 
-        // Click en tarjeta abre la página principal del proyecto
+        // Click on the card to open the project's main page.
         card.addEventListener('click', () => {
             if (project.projectURL) {
                 window.open(project.projectURL, '_blank');
@@ -230,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
         projects.forEach(project => {
             const card = createProjectCard(project);
             projectsContainer.appendChild(card);
-            applyCardImageAnimation(card); // <-- ¡Agrega esta línea!
+            applyCardImageAnimation(card);
         });
         applyCardLayout();
     }
@@ -243,8 +249,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('portfolioProjects', JSON.stringify(jsonProjects));
             })
             .catch(err => {
-                console.error('Error al cargar los proyectos:', err);
-                projectsContainer.textContent = 'No se pudieron cargar los proyectos.';
+                console.error('Error loading projects:', err);
+                projectsContainer.textContent = 'Projects could not be loaded.';
             });
     }
 
@@ -252,9 +258,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// ---
+// Avoid default jump
 function focusNameInput(event) {
-    event.preventDefault(); // Evita el salto por defecto
+    event.preventDefault();
     const nameInput = document.getElementById('contactname');
     if (nameInput) {
         nameInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -262,9 +268,10 @@ function focusNameInput(event) {
     }
 }
 
+/*======================================
+=   CONTACT FORM
+======================================*/
 
-
-// --- CONTACT FORM ---
 (function setupContactForm() {
     const contactForm = document.getElementById('contact-form');
     if (!contactForm) return;
@@ -273,7 +280,6 @@ function focusNameInput(event) {
     const submitBtn = contactForm.querySelector('.contact__form--btn');
     const status = document.getElementById('form-status');
 
-    // Función para validar un input o textarea y marcar clase + aria-invalid
     function validateInput(input) {
         const isValid = input.checkValidity();
         input.classList.toggle('valid', isValid);
@@ -281,7 +287,6 @@ function focusNameInput(event) {
         input.setAttribute('aria-invalid', !isValid);
     }
 
-    // Mostrar/ocultar el <small> solo cuando el input tiene foco
     contactInputs.forEach(input => {
         const small = input.parentElement.querySelector('small');
         if (!small) return;
@@ -295,31 +300,28 @@ function focusNameInput(event) {
         });
     });
 
-    // Validar inputs SOLO del formulario de contacto usando la clase
     contactInputs.forEach(input => {
         ['input', 'change', 'blur'].forEach(eventType => {
             input.addEventListener(eventType, () => validateInput(input));
         });
     });
 
-    // Validar después de cargar para autocomplete SOLO en contacto
     window.addEventListener('load', () => {
         contactInputs.forEach(input => {
             setTimeout(() => validateInput(input), 100);
         });
     });
 
-    // Deshabilitar/enviar botón dependiendo de la validez del formulario de contacto
     contactForm.addEventListener('input', () => {
         submitBtn.disabled = !contactForm.checkValidity();
     });
 
-    // Enviar formulario de contacto
+    // Send contact form
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
         if (!contactForm.checkValidity()) {
-            status.textContent = "Por favor, completa todos los campos correctamente.";
+            status.textContent = "Please complete all fields correctly.";
             submitBtn.disabled = true;
             return;
         }
@@ -336,7 +338,7 @@ function focusNameInput(event) {
             });
 
             if (response.ok) {
-                status.textContent = "¡Mensaje enviado correctamente!";
+                status.textContent = "Message sent successfully!";
                 contactForm.reset();
                 contactInputs.forEach(el => {
                     el.classList.remove('valid', 'invalid');
@@ -344,11 +346,11 @@ function focusNameInput(event) {
                 });
                 submitBtn.disabled = true;
             } else {
-                status.textContent = "Error al enviar el mensaje. Intenta más tarde.";
+                status.textContent = "Error sending message. Please try again later.";
                 submitBtn.disabled = false;
             }
         } catch (error) {
-            status.textContent = "Ocurrió un error inesperado.";
+            status.textContent = "An unexpected error occurred.";
             submitBtn.disabled = false;
         }
     });

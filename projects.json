@@ -2,7 +2,7 @@
     {
         "projectName": "Pensieve",
         "projectTypeSite": "SPA",
-        "synopsis": "Escribe lo que piensas. Guarda lo que sientes.",
+        "synopsis": "A digital journal-style SPA where you can write or record your thoughts. It automatically saves your ideas with a clean, calm design.",
         "technologies": ["HTML", "CSS", "JavaScript"],
         "projectThumbnail": "https://ik.imagekit.io/workamts/pc-light-default-view.png?updatedAt=1752109034261",
         "projectURL": "https://workamts.github.io/pensieve/",
@@ -11,7 +11,7 @@
     {
         "projectName": "JavaScript From Scratch",
         "projectTypeSite": "Landing Page",
-        "synopsis": "A practical and beginner-friendly course to learn JavaScript from zero.",
+        "synopsis": " I've created a landing page for a JavaScript course. It displays the syllabus by module, course benefits, and a FAQ section.",
         "technologies": ["HTML", "CSS", "JavaScript"],
         "projectThumbnail": "https://ik.imagekit.io/workamts/pc-hero-section.png?updatedAt=1751647148899",
         "projectURL": "https://workamts.github.io/javascript-from-scratch/",
@@ -20,7 +20,7 @@
     {
         "projectName": "EcoCafe",
         "projectTypeSite": "Ecommerce",
-        "synopsis": "An online organic coffee store",
+        "synopsis": "Fictional online store for an artisanal coffee brand. Includes a product catalog, a functional shopping cart, payment simulation, and an administrator dashboard.",
         "technologies": ["HTML", "CSS", "JavaScript"],
         "projectThumbnail": "https://i.postimg.cc/26s5t3cg/127-0-0-1-5500-index-html-7.png",
         "projectURL": "https://workamts.github.io/ecocafe/",

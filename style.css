@@ -24,6 +24,15 @@
     --color-duodecimal: #e6f4e4;
     --color-tridecimal: #ffe5e5;
     --color-tetradecimal: #e5f0fb;
+
+    /* Color technologies */
+    --color-html: #e34f26;
+    --color-css: #2965f1;
+    --color-js: #f7df1e;
+    --color-python: #387eb8;
+    --color-github: #333;
+    --color-git: #de4c36;
+    --color-vscode: #32b5f1;
 }
 
 
@@ -84,14 +93,12 @@ a {
     color: inherit;
 }
 
-
-/* Prevent scroll when menu is open */
 .no-scroll {
     overflow: hidden;
 }
 
 
-/*---------- ESTADO: MENÚ ABIERTO (Body desenfocado) ---------- */
+/* Status: menu open (Body blurred) */
 body.open-menu main,
 body.open-menu section,
 body.open-menu #projects,
@@ -162,20 +169,15 @@ header {
 }
 
 
-/*---------- Open menu button y Close menu button ----------*/
-/* Hidden checkbox for mobile menu toggle */
+/*--- Open menu button y Close menu button ---*/
 .checked__box {
     display: none;
 }
 
-
-/* Open menu button */
 #header-open-nav-button {
     transform: scaleX(-1);
 }
 
-
-/* Close menu button */
 #header-nav-close-button {
     position: absolute;
     top: 30px;
@@ -219,14 +221,10 @@ header {
     transition: height 0.8s ease;
 }
 
-
-/* Checkbox checked: open nav menu height */
 .checked__box:checked ~ #header-nav {
     height: 80vh;
 }
 
-
-/*---------- Navigation links container ----------*/
 #header-nav-list {
     display: flex;
     flex-direction: column;
@@ -235,8 +233,6 @@ header {
     text-align: center;
 }
 
-
-/* Navigation item base */
 .header__nav--item {
     display: flex;
     justify-content: center;
@@ -244,8 +240,6 @@ header {
     width: 100%;
 }
 
-
-/* Line animation */
 .header__nav--item :is(:hover, :active) {
     color: var(--color-quaternary);
 }
@@ -353,18 +347,22 @@ main {
 }
 
 
+
 /*======================================
 =   Hero Section
 ======================================*/
 
 #hero {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
     text-align: center;
-    width: 100%;
-    height: 70vh;
+    width: 85vw;
+    max-width: 1200px;
+    height: 85vh;
+    border-bottom: 2px solid var(--color-quinary);
 }
 
 #hero-focus {
@@ -388,6 +386,41 @@ main {
     color: var(--color-quinary);
 }
 
+#hero-links {
+    position: absolute;
+    bottom: 15px;
+    right: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 30px;
+    border-radius: 8px;
+    font-size: .9rem;
+    box-shadow: 0 2px 12px var(--color-senary);
+    transition: background-color .4s, color .4s, transform .4s;
+}
+
+.social-btn:hover,
+.social-btn:focus {
+    background-color: var(--color-secondary);
+    color: var(--color-tertiary);
+    transform: translateY(-2px) scale(1.05);
+}
+
+.social-btn i {
+    font-size: 1.3rem;
+}
+
+.social-btn:hover span,
+.social-btn:focus span {
+    border-bottom: 1px solid var(--color-tertiary);
+}
+
 
 
 /*======================================
@@ -399,9 +432,8 @@ main {
     justify-content: center;
     width: 85vw;
     max-width: 1300px;
-    border-top: 2px solid var(--color-quinary);
+    padding-block: 50px 70px;
     scroll-margin-top: 100px;
-    margin-top: 70px;
     background: transparent;
 }
 
@@ -413,7 +445,6 @@ main {
     width: 100%;
     max-width: 900px;
     padding-inline: 15px;
-    margin-top: 100px;
 }
 
 #about-me-title {
@@ -455,9 +486,8 @@ main {
     align-items: center;
     gap: 30px;
     width: 100%;
-    padding-bottom: 70px;
-    margin-top: 140px;
-    scroll-margin-top: 130px;
+    padding-block: 50px;
+    scroll-margin-top: 60px;
     color: var(--color-octonary);
     background: transparent;
 }
@@ -514,8 +544,6 @@ main {
     margin-bottom: 60px;
 }
 
-
-/*------------- Project Card Container -------------*/
 .project__card {
     position: relative;
     display: flex;
@@ -535,7 +563,7 @@ main {
 }
 
 
-/*---------- Project image container ----------*/
+/* Project image container */
 .project__container--image {
     position: relative;
     flex: 1 1 0;
@@ -663,7 +691,7 @@ main {
 }
 
 
-/*---------- MEDIA QUERIES: GRID FOR TABLET AND DESKTOP ----------*/
+/*---------- MEDIA QUERIES: PROJECTS GRID FOR TABLET AND DESKTOP ----------*/
 @media (min-width: 768px) {
     #projects-container {
         justify-items: center;
@@ -722,7 +750,7 @@ main {
     width: 100%;
     height: 100%;
     padding-block: 100px;
-    scroll-margin-top: 20px;
+    scroll-margin-top: 10px;
     background: var(--color-decimal);
 }
 
@@ -755,40 +783,41 @@ main {
         filter .8s cubic-bezier(.4,0,.2,1);
 }
 
+
 /* Hover: original color and phosphorescent shadow with drop-shadow */
 .skills__item[aria-label="HTML5"]:hover {
     opacity: 1;
-    filter: drop-shadow(0 0 16px #e34f26);
+    filter: drop-shadow(0 0 16px var(--color-html));
 }
 
 .skills__item[aria-label="CSS3"]:hover {
     opacity: 1;
-    filter: drop-shadow(0 0 16px #2965f1);
+    filter: drop-shadow(0 0 16px var(--color-css));
 }
 
 .skills__item[aria-label="JavaScript"]:hover {
     opacity: 1;
-    filter: drop-shadow(0 0 16px #f7df1e);
+    filter: drop-shadow(0 0 16px var(--color-js));
 }
 
 .skills__item[aria-label="Python"]:hover {
     opacity: 1;
-    filter: drop-shadow(0 0 16px #387EB8);
+    filter: drop-shadow(0 0 16px var(--color-python));
 }
 
 .skills__item[aria-label="GitHub"]:hover {
     opacity: 1;
-    filter: drop-shadow(0 0 16px #333);
+    filter: drop-shadow(0 0 16px var(--color-github));
 }
 
 .skills__item[aria-label="Git"]:hover {
     opacity: 1;
-    filter: drop-shadow(0 0 16px #de4c36);
+    filter: drop-shadow(0 0 16px var(--color-git));
 }
 
 .skills__item[aria-label="VS Code"]:hover {
     opacity: 1;
-    filter: drop-shadow(0 0 16px #32b5f1);
+    filter: drop-shadow(0 0 16px var(--color-vscode));
 }
 
 
@@ -803,14 +832,12 @@ main {
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 60px 30px 100px;
-    margin-bottom: 70px;
-    scroll-margin-top: 70px;
+    padding-block: 60px 100px;
+    scroll-margin-top: 50px;
     color: var(--color-octonary);
     background-color: var(--color-decimal);
 }
 
-/* main contact title */
 #contact-title {
     position: relative;
     font-size: 2.5rem;
@@ -819,39 +846,16 @@ main {
     color: var(--color-primary);
 }
 
-#contact-title::after {
-    content: "";
-    position: absolute;
-    top: 60px;
-    left: 50%;
-    width: 75%;
-    height: 4px;
-    border-radius: 8px;
-    background: linear-gradient(
-        to right,
-        var(--color-primary) 0%,
-        var(--color-secondary) 70%,
-        var(--color-tertiary) 100%
-    );
-    transform: translateX(-50%);
-    transition: width 0.4s ease;
-}
-
-#contact-title:hover::after {
-    width: 50%;
-}
-
-
 .contact__content {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     gap: 50px;
-    margin-top: 60px;
+    width: clamp(300px, 85vw, 1000px);
+    margin-top: 50px;
 }
 
-
-/*---------- Contact info ----------*/
 .contact__info {
     display: flex;
     flex-direction: column;
@@ -860,14 +864,12 @@ main {
 }
 
 .contact__title {
-    margin-bottom: 10px;
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--color-secondary);
 }
 
 .contact__description {
-    margin-bottom: 25px;
     color: var(--color-senary);
     font-size: 1rem;
     line-height: 1.5;
@@ -879,7 +881,7 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 .contact__item {
@@ -923,7 +925,6 @@ main {
 }
 
 
-
 /*======================================
 =   Contact Form
 ======================================*/
@@ -936,8 +937,6 @@ main {
     width: clamp(300px, 80vw, 450px);
 }
 
-
-/*---------- Styles For Input And Textarea ----------*/
 .input__group {
     display: flex;
     flex-direction: column;
@@ -1017,7 +1016,6 @@ main {
     transition: background-color 9999s ease-in-out 0s;
 }
 
-
 /* Message help */
 .input__group small {
     margin-top: 3px;
@@ -1060,16 +1058,12 @@ main {
     cursor: not-allowed;
 }
 
-
-/* Hover styles only if NOT disabled */
 #contact-button-container button:not(:disabled):hover {
     color: var(--color-senary);
     opacity: 0.9;
     transform: translateY(2px);
 }
 
-
-/* Before pseudo-element only if NOT disabled */
 #contact-button-container button:not(:disabled)::before {
     content: "";
     position: absolute;
@@ -1090,10 +1084,12 @@ main {
 
 
 /*---------- MEDIA QUERIES: CONTACT FOR TABLET AND DESKTOP ----------*/
-@media (min-width: 1025px) {
+@media (min-width: 992px) {
     .contact__content {
-        gap: 100px;
-        margin-top: 70px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: 60px;
     }
 
     .contact__info {
@@ -1129,24 +1125,20 @@ main {
 ======================================*/
 
 footer {
-    position: relative;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
     padding-block: 50px 30px;
-    background-color: transparent;
+    margin-top: 70px;
+    background-color: var(--color-primary);
 }
 
-.footer__container {
+#footer-content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 25px;
     width: clamp(300px, 85vw, 1200px);
 }
 
-
-/*---------- Footer contact social ----------*/
 #footer-info-social {
     display: flex;
     flex-direction: column;
@@ -1164,7 +1156,7 @@ footer {
 #footer-social-list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
     width: auto;
     height: auto;
 }
@@ -1175,11 +1167,7 @@ footer {
     align-items: flex-start;
 }
 
-
 #footer-social-list a {
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 1.2;
     color: var(--color-quinary);
     transition: opacity .4s ease, text-decoration .4s ease;
 }
@@ -1190,38 +1178,10 @@ footer {
     text-decoration: underline;
 }
 
-
-/*---------- Footer Navigation ----------*/
-#footer-nav {
-    margin-top: 30px;
-}
-
-#footer-links {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#footer-links li {
-    font-size: .9rem;
-    width: min-content;
-    text-align: center;
-    color: var(--color-quaternary);
-    transition: text-decoration .4s ease, opacity .4s ease;
-}
-
-#footer-links a:hover {
-    text-decoration: underline;
-    opacity: .7;
-}
-
-
-/*--- Copyright Info ---*/
 .footer__copy {
-    width: 90%;
+    width: 100%;
     padding-top: 20px;
     border-top: 1px solid var(--color-quaternary);
-    margin-top: 15px;
     font-size: .8rem;
     text-align: center;
     color: var(--color-quinary);
