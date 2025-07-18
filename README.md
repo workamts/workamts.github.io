@@ -41,9 +41,9 @@ This repository contains the source code for my personal portfolio, published at
 
 | Project           | Description                                                                                              | Link                                                                 |
 |-----------------------------|------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------|
-| **EcoCafé**                 | Fictional online store selling organic coffee. Inventory management, shopping cart, and purchase validation.                 | [View Project](https://workamts.github.io/proyectos/eco-cafe/) |
-| **JavaScript From Scratch** | Educational landing page with interactive buttons. Focused on demonstrating JavaScript knowledge from scratch.           | [View Project](https://workamts.github.io/proyectos/js-scratch/)|
-| **Penseive**                | SPA for personal writing with text or voice input. Stores data locally. Minimalist and accessible design.  | [View Project](https://workamts.github.io/proyectos/penseive/) |
+| **EcoCafé**                 | Fictional online store selling organic coffee. Inventory management, shopping cart, and purchase validation.                 | [View Project](https://workamts.github.io/ecocafe/) |
+| **JavaScript From Scratch** | Educational landing page with interactive buttons. Focused on demonstrating JavaScript knowledge from scratch.           | [View Project](https://workamts.github.io/javascript-from-scratch/)|
+| **Penseive**                | SPA for personal writing with text or voice input. Stores data locally. Minimalist and accessible design.  | [View Project](https://workamts.github.io/pensieve/) |
 
 ---
 
