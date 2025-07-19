@@ -19,14 +19,14 @@
     <meta property="og:url" content="https://metatags.io/" />
     <meta property="og:title" content="Anderson | Frontend Developer | workamts" />
     <meta property="og:description" content="I'm Anderson, a front-end developer passionate about creating modern, accessible, and responsive websites. With experience in HTML, CSS, JavaScript, and web optimization. Also known as workamts." />
-    <meta property="og:image" content="https://metatags.io/images/meta-tags.png" />
+    <meta property="og:image" content="https://ik.imagekit.io/workamts/pc-main-view.png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://metatags.io/" />
     <meta property="twitter:title" content="Anderson | Frontend Developer | workamts" />
     <meta property="twitter:description" content="I'm Anderson, a front-end developer passionate about creating modern, accessible, and responsive websites. With experience in HTML, CSS, JavaScript, and web optimization. Also known as workamts." />
-    <meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" />
+    <meta property="twitter:image" content="https://ik.imagekit.io/workamts/pc-main-view.png" />
 
 
     <!-- Theme color for mobile browsers -->
@@ -368,11 +368,13 @@
                     <!-- Email -->
                     <div class="input__group">
                         <label for="contactemail">Email address <span aria-hidden="true">*</span></label>
-                        <input class="contact__form--field" type="contactemail" id="contactemail"
+                        <input class="contact__form--field"
+                            type="email"
+                            id="contactemail"
                             name="Email"
                             placeholder="youremail@example.com"
                             required
-                            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                            pattern="^[a-zA-Z0-9._%\\+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
                             autocomplete="email"
                             inputmode="email"
                             aria-required="true"

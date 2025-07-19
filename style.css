@@ -791,7 +791,6 @@ main {
         filter .8s cubic-bezier(.4,0,.2,1);
 }
 
-
 /* Hover: original color and phosphorescent shadow with drop-shadow */
 .skills__item[aria-label="HTML5"]:hover {
     opacity: 1;

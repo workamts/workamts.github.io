@@ -268,6 +268,8 @@ function focusNameInput(event) {
     }
 }
 
+
+
 /*======================================
 =   CONTACT FORM
 ======================================*/
@@ -290,7 +292,7 @@ function focusNameInput(event) {
     contactInputs.forEach(input => {
         const small = input.parentElement.querySelector('small');
         if (!small) return;
-        small.style.display = 'none'; // Oculta por defecto
+        small.style.display = 'none';
 
         input.addEventListener('focus', () => {
             small.style.display = 'block';
