@@ -809,7 +809,7 @@ main {
 
 .skills__item[aria-label="Python"]:hover {
     opacity: 1;
-    filter: drop-shadow(0 0 16px var(--color-python));
+    filter: drop-shadow(0 0 16px var(--color-python)) !important;
 }
 
 .skills__item[aria-label="GitHub"]:hover {
@@ -822,9 +822,9 @@ main {
     filter: drop-shadow(0 0 16px var(--color-git));
 }
 
-.skills__item[aria-label="VS Code"]:hover {
+.skills__item[aria-label="VSCode"]:hover {
     opacity: 1;
-    filter: drop-shadow(0 0 16px var(--color-vscode));
+    filter: drop-shadow(0 0 16px var(--color-vscode)) !important;
 }
 
 
