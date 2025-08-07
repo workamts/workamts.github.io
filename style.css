@@ -823,19 +823,19 @@ main {
 
 .skills__item[aria-label="Bootstrap"]:hover {
     opacity: 1;
-    background: rgba(121, 82, 179, 0.18);
-    filter: drop-shadow(0 0 16px var(--color-bootstrap));
+    background: rgba(121, 82, 179, 0.18) !important;
+    filter: drop-shadow(0 0 16px var(--color-bootstrap)) !important;
 }
 
 .skills__item[aria-label="React"]:hover {
     opacity: 1;
-    background: rgba(97, 218, 251, 0.13);
-    filter: drop-shadow(0 0 16px var(--color-react));
+    background: rgba(97, 218, 251, 0.13) !important;
+    filter: drop-shadow(0 0 16px var(--color-react)) !important;
 }
 
 .skills__item[aria-label="Python"]:hover {
     opacity: 1;
-    background: linear-gradient(135deg, rgba(56,126,184, 0.18) 10%, rgba(255,224,82, 0.18) 100%);
+    background: linear-gradient(135deg, rgba(56,126,184, 0.18) 10%, rgba(255,224,82, 0.18) 100%) !important;
     filter:
         drop-shadow(-8px -8px 16px var(--color-python1))
         drop-shadow(8px 8px 16px var(--color-python2)) !important;
