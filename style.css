@@ -29,7 +29,11 @@
     --color-html: #e34f26;
     --color-css: #2965f1;
     --color-js: #f7df1e;
-    --color-python: #387eb8;
+    --color-figma: #0acf83;
+    --color-bootstrap: #7952b3;
+    --color-react: #61dafb;
+    --color-python1: #387eb8;
+    --color-python2: #ffe052;
     --color-github: #333;
     --color-git: #de4c36;
     --color-vscode: #32b5f1;
@@ -774,8 +778,8 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 50px;
-    width: clamp(300px, 85vw, 700px);
+    gap: 35px;
+    width: clamp(300px, 85vw, 800px);
     height: auto;
 }
 
@@ -784,6 +788,8 @@ main {
     height: 128px;
     opacity: 0.7;
     cursor: pointer;
+    border-radius: 15px;
+    padding: 15px;
     background: transparent;
     filter: grayscale(1) brightness(0.6) drop-shadow(0 0 10px rgba(0,0,0,0.7));
     transition:
@@ -791,39 +797,65 @@ main {
         filter .8s cubic-bezier(.4,0,.2,1);
 }
 
-/* Hover: original color and phosphorescent shadow with drop-shadow */
 .skills__item[aria-label="HTML5"]:hover {
     opacity: 1;
+    background: rgba(227, 79, 38, 0.18);
     filter: drop-shadow(0 0 16px var(--color-html));
 }
 
 .skills__item[aria-label="CSS3"]:hover {
     opacity: 1;
+    background: rgba(41, 101, 241, 0.18);
     filter: drop-shadow(0 0 16px var(--color-css));
 }
 
 .skills__item[aria-label="JavaScript"]:hover {
     opacity: 1;
+    background: rgba(247, 223, 30, 0.13);
     filter: drop-shadow(0 0 16px var(--color-js));
+}
+
+.skills__item[aria-label="Figma"]:hover {
+    opacity: 1;
+    background: rgba(10, 207, 131, 0.13);
+    filter: drop-shadow(0 0 16px var(--color-figma));
+}
+
+.skills__item[aria-label="Bootstrap"]:hover {
+    opacity: 1;
+    background: rgba(121, 82, 179, 0.18);
+    filter: drop-shadow(0 0 16px var(--color-bootstrap));
+}
+
+.skills__item[aria-label="React"]:hover {
+    opacity: 1;
+    background: rgba(97, 218, 251, 0.13);
+    filter: drop-shadow(0 0 16px var(--color-react));
 }
 
 .skills__item[aria-label="Python"]:hover {
     opacity: 1;
-    filter: drop-shadow(0 0 16px var(--color-python)) !important;
+    background: linear-gradient(135deg, rgba(56,126,184, 0.18) 10%, rgba(255,224,82, 0.18) 100%);
+    filter:
+        drop-shadow(-8px -8px 16px var(--color-python1))
+        drop-shadow(8px 8px 16px var(--color-python2)) !important;
 }
 
 .skills__item[aria-label="GitHub"]:hover {
     opacity: 1;
+    background: rgba(51, 51, 51, 0.18);
     filter: drop-shadow(0 0 16px var(--color-github));
 }
 
 .skills__item[aria-label="Git"]:hover {
     opacity: 1;
+    background: rgba(222, 76, 54, 0.18);
     filter: drop-shadow(0 0 16px var(--color-git));
 }
 
 .skills__item[aria-label="VSCode"]:hover {
     opacity: 1;
+    background: rgba(50, 181, 241, 0.13);
     filter: drop-shadow(0 0 16px var(--color-vscode)) !important;
 }
 
@@ -1132,84 +1164,20 @@ main {
 ======================================*/
 
 footer {
+    position: relative;
     display: flex;
     justify-content: center;
-    padding-block: 50px 30px;
-    margin-top: 70px;
+    margin-top: 30px;
+    padding-top: 50px;
     background-color: var(--color-primary);
 }
 
-#footer-content {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    width: clamp(300px, 85vw, 1200px);
-}
-
-#footer-info-social {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    width: auto;
-}
-
-#info-text {
-    font-size: 1.8rem;
-    font-weight: 700;
-    letter-spacing: .5rem;
-    color: var(--color-quaternary);
-}
-
-#footer-social-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: auto;
-    height: auto;
-}
-
-#footer-social-list li {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-#footer-social-list a {
-    color: var(--color-quinary);
-    transition: opacity .4s ease, text-decoration .4s ease;
-}
-
-#footer-social-list a:hover,
-#footer-social-list a:focus {
-    opacity: .4;
-    text-decoration: underline;
-}
-
 .footer__copy {
-    width: 100%;
-    padding-top: 20px;
+    width: clamp(300px, 90%, 1200px);
+    padding-block: 20px;
     border-top: 1px solid var(--color-quaternary);
     font-size: .8rem;
     text-align: center;
     color: var(--color-quinary);
 }
-
-
-/*---------- MEDIA QUERIES: FOOTER FOR TABLET AND DESKTOP ----------*/
-@media (min-width: 768px) {
-    #footer-nav {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-    }
-
-    #footer-links {
-        width: clamp(700px, 85vw, 900px);
-    }
-
-    #footer-links li {
-        width: fit-content;
-    }
-}
-/*---------- END MEDIA QUERIES ----------*/
 
