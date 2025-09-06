@@ -16,18 +16,17 @@ const mediaQuery = window.matchMedia('(max-width: 768px)');
 document.addEventListener("DOMContentLoaded", () => {
     const navLinks = document.querySelectorAll("#header-nav-list a");
 
-    if (!checkbox.checked) {
-        document.body.classList.remove("open-menu", "no-scroll");
-    }
+    // Estado inicial del menú
+    document.body.classList.toggle("open-menu", checkbox.checked);
+    document.body.classList.toggle("no-scroll", checkbox.checked);
 
+    // Abrir/cerrar menú con el checkbox
     checkbox.addEventListener("change", () => {
-        if (checkbox.checked) {
-            document.body.classList.add("open-menu", "no-scroll");
-        } else {
-            document.body.classList.remove("open-menu", "no-scroll");
-        }
+        document.body.classList.toggle("open-menu", checkbox.checked);
+        document.body.classList.toggle("no-scroll", checkbox.checked);
     });
 
+    // Cerrar menú al hacer clic en un enlace
     navLinks.forEach(link => {
         link.addEventListener("click", () => {
             checkbox.checked = false;
@@ -35,15 +34,37 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // Cerrar menú si cambia el tamaño de pantalla
     mediaQuery.addEventListener("change", (e) => {
         if (!e.matches) {
             checkbox.checked = false;
             document.body.classList.remove("open-menu", "no-scroll");
         }
     });
+
+    // Abrir menú al hacer clic en el botón (por accesibilidad extra)
+    document.getElementById('header-open-nav-button').addEventListener('click', function(e) {
+        // Solo si el evento no viene del label (por defecto ya lo activa)
+        if (e.target.tagName !== 'LABEL') {
+            e.preventDefault();
+            checkbox.checked = true;
+            document.body.classList.add('open-menu', 'no-scroll');
+        }
+    });
 });
 
-
+// Cerrar menú al hacer clic fuera del nav y del botón
+document.addEventListener('click', function(e) {
+    const nav = document.getElementById('header-nav');
+    const openBtn = document.getElementById('header-open-nav-button');
+    const checkbox = document.querySelector('#open-menu');
+    if (checkbox && checkbox.checked) {
+        if (!nav.contains(e.target) && !openBtn.contains(e.target)) {
+            checkbox.checked = false;
+            document.body.classList.remove('open-menu', 'no-scroll');
+        }
+    }
+});
 
 
 
