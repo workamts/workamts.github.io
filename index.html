@@ -110,19 +110,16 @@
                         <!-- List of navigation links -->
                         <ul id="header-nav-list" role="menubar" aria-label="Primary navigation links">
                             <li class="header__nav--item" role="none">
-                                <a href="#info-container" role="menuitem" aria-label="Navigate to about me section">About Me</a>
+                                <a href="#services" role="menuitem" aria-label="Navigate services section">Services</a>
                             </li>
                             <li class="header__nav--item" role="none">
-                                <a href="#projects" role="menuitem" aria-label="Navigate to projects section">Projects</a>
+                                <a href="#projects" role="menuitem" aria-label="Navigate to projects section">My Jobs</a>
                             </li>
                             <li class="header__nav--item" role="none">
                                 <a href="#skills" role="menuitem" aria-label="Navigate to projects section">Skills</a>
                             </li>
                             <li class="header__nav--item" role="none">
-                                <a href="#contact-section" role="menuitem" aria-label="Navigate to contact section">Contact</a>
-                            </li>
-                            <li class="header__nav--item" role="none">
-                                <a href="#footer-info-social" role="menuitem" aria-label="Navigate to social section">Social</a>
+                                <a href="#contact-section" role="menuitem" aria-label="Navigate to contact section">Contact Me</a>
                             </li>
                         </ul>
                     </nav>
@@ -153,19 +150,30 @@
 
     <!-- Main Content -->
     <main role="main">
-        <!-- About Me Section -->
-        <section id="info-container" aria-label="Personal information sections">
-            <div id="about-me-section" aria-labelledby="about-me-title">
-                <h2 id="about-me-title">About Me</h2>
-                <div id="about-me-container-text" role="article" aria-label="About me content">
-                    <p tabindex="0">
-                    I'm Anderson, a front-end developer passionate about transforming ideas into functional and engaging digital experiences. I work under the alias workamts, a name that represents my commitment to quality, continuous learning, and innovation.
+        <!-- Services Section -->
+        <section id="services">
+            <div id="services-container">
+                <!-- Diseño UI/UX -->
+                <div class="services__block design">
+                    <h2 class="services__title">Diseño UI/UX</h2>
+                    <p class="services__text">
+                        Como diseñador en Figma, me apasiona transformar ideas en interfaces claras,
+                        modernas y atractivas. Me enfoco en la usabilidad, creando prototipos que no
+                        solo se ven bien, sino que también comunican y funcionan. Creo experiencias
+                        centradas en el usuario, cuidando la coherencia visual y la accesibilidad en
+                        cada detalle.
                     </p>
-                    <p tabindex="0">
-                        I have solid experience in HTML, CSS, and JavaScript, creating responsive, accessible, and modern interfaces. I focus on writing clean, optimized code geared toward delivering the best user experience.
-                    </p>
-                    <p tabindex="0">
-                        Every project is an opportunity to improve, explore new technologies, and provide efficient solutions. My goal is to build web products that not only work, but also excel.
+                </div>
+
+                <!-- Desarrollo Frontend -->
+                <div class="services__block development">
+                    <h2 class="services__title">Desarrollo Frontend</h2>
+                    <p class="services__text">
+                        Con experiencia en HTML, CSS, JavaScript, Bootstrap y React, convierto diseños
+                        en productos digitales reales y funcionales. Me especializo en interfaces
+                        responsivas, rápidas y accesibles, optimizadas para brindar la mejor experiencia
+                        al usuario en cualquier dispositivo. Disfruto unir la estética del diseño con la
+                        solidez del código para crear soluciones web completas.
                     </p>
                 </div>
             </div>

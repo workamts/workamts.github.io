@@ -177,14 +177,14 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 124px;
+    width: auto;
     height: 100%;
 }
 
 /* Logo image */
 #header-logo {
     display: block;
-    width: auto;
+    width: 180px;
     height: auto;
     color: var(--color-duodecimal);
 }
@@ -271,7 +271,7 @@ body.open-menu #header-open-nav-button {
     position: relative;
     display: inline-block;
     overflow: hidden;
-    width: auto;
+    width: max-content;
     font-size: 1.2rem;
     font-weight: 900;
     letter-spacing: .05rem;
@@ -294,15 +294,6 @@ body.open-menu #header-open-nav-button {
     width: 100%;
 }
 
-#hero-image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: -1;
-    width: 150px;
-    height: auto;
-}
-
 
 /*--- Introduction text ---*/
 #intro-text {
@@ -316,7 +307,7 @@ body.open-menu #header-open-nav-button {
 
 #intro-text-name {
     position: relative;
-    top: 10px;
+    top: 5px;
     left: 10px;
     width: max-content;
     font-weight: 600;
@@ -328,7 +319,7 @@ body.open-menu #header-open-nav-button {
     z-index: 1;
     display: block;
     font-family: var(--font-main) !important;
-    font-size: clamp(4.3rem, 11.5vw, 6rem);
+    font-size: clamp(4rem, 11.5vw, 6rem);
     font-weight: 900;
     line-height: 1.1;
     color: transparent;
@@ -342,7 +333,6 @@ body.open-menu #header-open-nav-button {
 }
 
 #hero-title .line {
-    display: flex;
     width: 100%;
     font-family: var(--font-main) !important;
 }
@@ -459,8 +449,10 @@ body.open-menu #header-open-nav-button {
 
     #header-nav {
         position: relative;
-        inset: 0;
-        width: 55%;
+        top: 0;
+        right: 0;
+        left: 0;
+        width: 65%;
         max-width: 550px;
         height: auto;
         padding: 0;
@@ -483,7 +475,7 @@ body.open-menu #header-open-nav-button {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: max-content;
+        width: auto;
     }
 
     .header__nav--item a {
@@ -514,7 +506,7 @@ body.open-menu #header-open-nav-button {
     }
 
     #hero-title {
-        font-size: clamp(6rem, 11vw, 8rem) !important;
+        font-size: 6rem;
     }
 
     #vh-icons {
@@ -522,15 +514,26 @@ body.open-menu #header-open-nav-button {
     }
 }
 
-@media (min-width: 1238px) {
+@media (min-width: 1061px) {
     #intro-text {
         min-width: fit-content;
     }
 
     #intro-text-name {
+        position: absolute;
+        top: -25px;
         left: 0;
-        width: max-content;
-        margin-left: 180px;
+        width: clamp(300px, 40vw, 550px);
+        padding-right: 20px;
+        text-align: right;
+    }
+
+    #hero-title {
+        font-size: clamp(6rem, 9vw, 8rem);
+    }
+
+    #hero-title .line {
+        display: flex;
     }
 
     #hero-title .line.right {
@@ -562,53 +565,64 @@ main {
 
 
 /*======================================
-=   PERSONAL INFO
+=   SERVICES
 ======================================*/
 
-#info-container {
-    display: flex;
-    justify-content: center;
-    width: 85vw;
-    max-width: 1300px;
-    padding-block: 50px 70px;
-    scroll-margin-top: 100px;
-    background: transparent;
-}
-
-#about-me-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
+#services {
     width: 100%;
-    max-width: 900px;
-    padding-inline: 15px;
+    height: auto;
+    padding: 90px 50px;
 }
 
-#about-me-title {
-    position: relative;
-    font-size: 2.5rem;
-    font-weight: 600;
-    text-align: center;
-    letter-spacing: .1rem;
-    color: var(--color-quaternary);
-}
 
-#about-me-title:hover::after {
-    width: 50%;
-}
-
-#about-me-container-text {
+#services-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    text-align: center;
+    gap: 50px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-#about-me-container-text p {
-    line-height: 1.6rem;
-    color: var(--color-quinary);
+
+.services__block {
+    width: 100%;
 }
+
+
+.services__title {
+    width: fit-content;
+    font-size: 2.2rem;
+    color: #04C704;
+}
+
+
+.services__text {
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--color-senary);
+}
+
+
+/*------------- MEDIA QUERIES: HEADER TABLET AND DESKTOP -------------*/
+@media (min-width: 768px) {
+    #services-container {
+        justify-content: center;
+        align-items: flex-end;
+    }
+    .development {
+        width: max-content;
+    }
+
+    .services__text {
+        width: clamp(350px, 45vw, 500px);
+    }
+}
+
+
+
+
+
 
 
 
