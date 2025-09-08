@@ -68,6 +68,153 @@ document.addEventListener('click', function(e) {
 
 
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const h = document.getElementById('hero-title');
+    if (!h) return;
+
+    // evita ejecutar más de una vez
+    if (h.dataset.splitDone === '1') return;
+
+    const text = h.textContent.trim();
+
+    // Busca " AND " (mayúsc/minúsc) y separa en dos partes:
+    // primera = antes de 'AND', segunda = 'AND' + resto
+    const match = text.match(/^(.*?)\s+AND\s+(.*)$/i);
+
+    let first, second;
+    if (match) {
+        first  = match[1].trim(); // "WEB DESIGNER"
+        second = 'AND ' + match[2].trim(); // "AND DEVELOPER"
+    } else {
+        // fallback: divide por la mitad de palabras si no encuentra "AND"
+        const words = text.split(/\s+/);
+        const half = Math.ceil(words.length / 2);
+        first = words.slice(0, half).join(' ');
+        second = words.slice(half).join(' ');
+    }
+
+    // Inserta spans (una sola vez)
+    h.innerHTML = `
+        <span class="line right">${first}</span>
+        <span class="line left">${second}</span>
+    `;
+    h.dataset.splitDone = '1';
+});
+
+
+
+(function(){
+  const MIN_W = 768;
+
+  let overlay = null;
+  const debounce = (fn, t=80) => {
+    let id;
+    return (...a) => { clearTimeout(id); id = setTimeout(()=>fn(...a), t); };
+  };
+
+  function createOverlay() {
+    const heroTitle = document.getElementById('hero-title');
+    const heroContent = document.getElementById('hero-content');
+    if (!heroTitle || !heroContent) return;
+
+    // elimina overlay viejo si existe
+    if (overlay) overlay.remove();
+
+    // crea overlay DENTRO del mismo contenedor
+    overlay = document.createElement('div');
+    overlay.id = 'hero-title-overlay';
+    overlay.style.position = 'absolute';
+    overlay.style.pointerEvents = 'none';
+    overlay.style.zIndex = 2;
+    overlay.style.overflow = 'visible';
+    overlay.style.display = 'none'; // se activa en update
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.background = 'none';
+
+    // Copia el HTML del título
+    overlay.innerHTML = heroTitle.innerHTML;
+
+    // Copia TODOS los estilos relevantes del heroTitle
+    const cs = window.getComputedStyle(heroTitle);
+    overlay.style.fontFamily = cs.fontFamily;
+    overlay.style.fontSize = cs.fontSize;
+    overlay.style.fontWeight = cs.fontWeight;
+    overlay.style.lineHeight = cs.lineHeight;
+    overlay.style.letterSpacing = cs.letterSpacing;
+    overlay.style.textTransform = cs.textTransform;
+    overlay.style.textAlign = cs.textAlign;
+    overlay.style.whiteSpace = cs.whiteSpace;
+    overlay.style.wordBreak = cs.wordBreak;
+    overlay.style.wordWrap = cs.wordWrap;
+    overlay.style.padding = cs.padding;
+    overlay.style.margin = cs.margin;
+
+    // Forzar color blanco a todos los elementos del overlay
+    overlay.querySelectorAll('*').forEach(el => {
+      el.style.color = 'white';
+      el.style.webkitTextFillColor = '#e6f4e4';
+      el.style.background = 'none';
+      el.style.webkitBackgroundClip = 'unset';
+      el.style.backgroundClip = 'unset';
+    });
+
+    // Posicionar overlay exactamente encima del heroTitle
+    heroTitle.style.position = 'relative';
+    heroTitle.appendChild(overlay);
+
+    updateOverlay();
+  }
+
+  function updateOverlay() {
+    const heroTitle = document.getElementById('hero-title');
+    const heroContent = document.getElementById('hero-content');
+    if (!heroTitle || !overlay || !heroContent) return;
+
+    if (window.innerWidth <= MIN_W) {
+      overlay.style.display = 'none';
+      return;
+    }
+    overlay.style.display = 'block';
+
+    // Bounding rects relativos al viewport
+    const titleRect = heroTitle.getBoundingClientRect();
+    const contentRect = heroContent.getBoundingClientRect();
+
+    // Calcula el borde derecho del área borrosa relativo al título
+    const rightEdge = contentRect.right - titleRect.left;
+    // El overlay solo muestra lo que está a la derecha del área borrosa
+    overlay.style.clipPath = `inset(0px 0px 0px ${Math.max(0, Math.round(rightEdge))}px)`;
+    overlay.style.webkitClipPath = overlay.style.clipPath;
+  }
+
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    createOverlay();
+    // En cada resize y fonts.ready, recrea el overlay (no solo updateOverlay)
+    window.addEventListener('resize', debounce(() => {
+      createOverlay();
+    }, 70));
+    window.addEventListener('scroll', debounce(updateOverlay, 30));
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(() => setTimeout(createOverlay, 50));
+    }
+  }, 50);
+});
+})();
+
+
+
+
+
+
+
+
+
+
 /*======================================
 =   PROJECTS
 ======================================*/

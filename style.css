@@ -80,12 +80,10 @@ body {
 /*--- Font family and color for base elements ---*/
 h1, h2, h3, h4, h5 {
     font-family: var(--font-main);
-    color: var(--color-primary);
 }
 
 body, nav, footer, p, a, button, legend, small, span, strong, textarea, input, select, label {
     font-family: var(--font-secondary);
-    color: var(--color-quaternary);
 }
 
 ul {
@@ -108,14 +106,31 @@ a {
 ======================================*/
 
 #hero {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 20px;
     width: 100%;
     height: 100vh;
     padding: 15px 25px;
-    background: url(/assets/images/hero-forest.jpg) no-repeat center center;
+    background: url(https://img.freepik.com/fotos-premium/bosque-luz-sol-brillando-traves-arboles-luz-sol-es-brillante-calida-creando-atmosfera-pacifica-serena-arboles-son-exuberantes-verdes-hojas-varios-tamanos-formas_715671-25497.jpg?w=2000) no-repeat center center;
     background-size: cover;
+}
+
+#hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: inherit;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.45) 0%,
+        rgba(0, 0, 0, 0.20) 25%,
+        rgba(0, 0, 0, 0) 50%
+    );
 }
 
 #hero-content {
@@ -127,9 +142,8 @@ a {
     height: 100%;
     padding-inline: 20px;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.10);
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
 }
 
 
@@ -137,8 +151,9 @@ a {
 header {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 80px;
+    height: 100px;
     background-color: transparent;
 }
 
@@ -279,6 +294,15 @@ body.open-menu #header-open-nav-button {
     width: 100%;
 }
 
+#hero-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    width: 150px;
+    height: auto;
+}
+
 
 /*--- Introduction text ---*/
 #intro-text {
@@ -290,73 +314,77 @@ body.open-menu #header-open-nav-button {
     padding-bottom: 50px;
 }
 
-#intro-text span {
+#intro-text-name {
     position: relative;
     top: 10px;
     left: 10px;
+    width: max-content;
+    font-weight: 600;
     color: var(--color-duodecimal);
 }
 
-#group-h1 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-#container-first-h1,
-#container-second-h1 {
-    display: flex;
-    flex-wrap: wrap;
-    width: auto;
-    border: 1px solid #f00;
-}
-
-#first-h1,
-#second-h1 {
+#hero-title {
     position: relative;
     z-index: 1;
-    font-family: var(--font-main);
-    font-size: 4.7rem;
-    font-weight: 900 !important;
+    display: block;
+    font-family: var(--font-main) !important;
+    font-size: clamp(4.3rem, 11.5vw, 6rem);
+    font-weight: 900;
     line-height: 1.1;
-    color: transparent !important;
-    word-break: break-word;
-    white-space: normal;
-    overflow-wrap: break-word;
-    border: 1px solid #f00;
-    background: url(/assets/images/hero-forest.jpg) no-repeat center center;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    background-image: url(https://img.freepik.com/fotos-premium/bosque-luz-sol-brillando-traves-arboles-luz-sol-es-brillante-calida-creando-atmosfera-pacifica-serena-arboles-son-exuberantes-verdes-hojas-varios-tamanos-formas_715671-25497.jpg?w=2000);
+    background-position: center center;
     background-size: cover;
+    background-attachment: fixed;
     background-clip: text;
     -webkit-background-clip: text;
 }
 
-.h1__part2 {
-    position: relative;
+#hero-title .line {
     display: flex;
-    justify-content: center;
+    width: 100%;
+    font-family: var(--font-main) !important;
+}
+
+
+/*--- Icons decoration ---*/
+#vh-icons {
+    display: none;
+    flex-direction: column;
     align-items: center;
+    gap: 20px;
     width: auto;
     height: auto;
-    border: 1px solid #0f0;
 }
 
-.h1__part2 span {
-    position: relative;
-    z-index: 1;
-    font-family: var(--font-main);
-    font-size: 4.7rem;
-    font-weight: 900 !important;
-    line-height: 1.1;
-    color: transparent !important;
-    word-break: break-word;
-    white-space: normal;
-    border: 1px solid #fff !important;
-    overflow-wrap: break-word;
-    border: 1px solid #f00;
+#vline {
+    display: block;
+    width: 3px;
+    height: 60px;
+    background: #fff;
+    border-radius: 2px;
+    opacity: 0.8;
+}
+
+#diamond,
+#diamond-outlined {
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    transform: rotate(45deg);
+    border-radius: 2px;
+    opacity: 0.9;
+}
+
+#diamond-outlined {
+    background: transparent;
+    border: 2px solid #fff;
+    opacity: 0.9;
 }
 
 
-/* Social links */
+/*--- Social links ---*/
 #hero-links {
     position: absolute;
     right: 10px;
@@ -373,19 +401,24 @@ body.open-menu #header-open-nav-button {
     align-items: center;
     width: 40px;
     height: 40px;
-    border-radius: 10px;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    border-radius: 8px;
+}
+
+#social-btn-github {
+    background-color: #b0bec5;
+}
+
+#social-btn-linkedin {
+    color: var(--color-nonary);
+    background-color: #222;
 }
 
 .social__btn i {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     transition: color .2s, transform .2s;
 }
 
 .social__btn i:hover {
-    color: var(--color-octonary);
     transform: translateY(-1px) scale(1.05);
 }
 
@@ -393,13 +426,14 @@ body.open-menu #header-open-nav-button {
 /*------------- MEDIA QUERIES: HEADER TABLET AND DESKTOP -------------*/
 @media (min-width: 768px) {
     #hero {
-        justify-content: flex-start;
+        justify-content: space-between;
         padding: 0;
+        padding-right: 20px;
     }
 
     #hero-content {
         position: relative;
-        width: 300px;
+        width: clamp(300px, 40vw, 550px);
         border-radius: 0;
     }
 
@@ -412,7 +446,6 @@ body.open-menu #header-open-nav-button {
         align-items: center;
         width: 100vw;
         padding-inline: 20px 35px;
-        border: 1px solid #f00;
     }
 
     .no-scroll {
@@ -427,7 +460,8 @@ body.open-menu #header-open-nav-button {
     #header-nav {
         position: relative;
         inset: 0;
-        width: 50%;
+        width: 55%;
+        max-width: 550px;
         height: auto;
         padding: 0;
         overflow: visible;
@@ -435,7 +469,6 @@ body.open-menu #header-open-nav-button {
         background-color: transparent;
         box-shadow: none;
         transition: none;
-        border: 1px solid #f00;
     }
 
     #header-nav-list {
@@ -444,7 +477,6 @@ body.open-menu #header-open-nav-button {
         justify-content: space-between;
         gap: 0;
         width: 100%;
-        padding-left: 10px;
     }
 
     .header__nav--item {
@@ -455,56 +487,60 @@ body.open-menu #header-open-nav-button {
     }
 
     .header__nav--item a {
-        font-size: .9rem;
-        color: var(--color-duodecimal);
+        font-size: 1rem;
+        color: var(--color-quinary);
         text-shadow: 0 0 5px var(--color-octonary);
     }
 
-    /*--- Introduction text ---*/
+    .header__nav--item :is(:hover, :active) {
+        color: var(--color-duodecimal);
+    }
+
+    .header__nav--item a::before {
+        background: var(--color-duodecimal);
+    }
+
     #intro-text {
         position: absolute;
         bottom: 0;
         left: 0;
-        width: 570px;
+        min-width: 85vw;
         height: auto;
         padding-left: 20px;
-        border: 1px solid #f00;
     }
 
-    #intro-text span {
-        top: 10px;
+    #intro-text-name {
         left: 0;
-        width: 100%;
+    }
+
+    #hero-title {
+        font-size: clamp(6rem, 11vw, 8rem) !important;
+    }
+
+    #vh-icons {
+        display: flex;
+    }
+}
+
+@media (min-width: 1238px) {
+    #intro-text {
+        min-width: fit-content;
+    }
+
+    #intro-text-name {
+        left: 0;
+        width: max-content;
+        margin-left: 180px;
+    }
+
+    #hero-title .line.right {
+        width: max-content;
+        margin-left: 160px;
+    }
+
+    #hero-title .line.left {
+        width: max-content;
         text-align: left;
-    }
-
-    #group-h1 {
-        align-items: center;
-    }
-
-    #container-first-h1 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        border: 1px solid #f00;
-    }
-
-    #first-h1 {
-        display: flex;
-        justify-content: center;
-        border: 1px solid #f00;
-    }
-
-    #container-second-h1 {
-        display: flex;
-        justify-content: flex-start;
-        width: 100%;
-    }
-
-    #group-h1 h1 {
-        font-size: 2rem;
-        color: var(--color-decimal);
     }
 }
 /*------------- END MEDIA QUERIES -------------*/
