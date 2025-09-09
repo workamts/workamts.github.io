@@ -1,7 +1,16 @@
 [
     {
+        "projectName": "Ink",
+        "projectTypeSite": "#Producto",
+        "synopsis": "Ink is a minimalist app for creating and copying color palettes. It includes harmony modes, accessibility previews, responsive layout, and local generation—no backend required.",
+        "technologies": ["HTML", "CSS", "JavaScript", "Bootstrap"],
+        "projectThumbnail": "https://ik.imagekit.io/workamts/pc-hero.png?updatedAt=1757448270795",
+        "projectURL": "https://workamts.github.io/ink/",
+        "githubURL": "https://github.com/workamts/ink"
+    },
+    {
         "projectName": "Pensieve",
-        "projectTypeSite": "SPA",
+        "projectTypeSite": "#Proyecto paralelo",
         "synopsis": "A digital journal-style SPA where you can write or record your thoughts. It automatically saves your ideas with a clean, calm design.",
         "technologies": ["HTML", "CSS", "JavaScript"],
         "projectThumbnail": "https://ik.imagekit.io/workamts/pc-light-default-view.png?updatedAt=1752109034261",
@@ -10,7 +19,7 @@
     },
     {
         "projectName": "JavaScript From Scratch",
-        "projectTypeSite": "Landing Page",
+        "projectTypeSite": "#Curso",
         "synopsis": " I've created a landing page for a JavaScript course. It displays the syllabus by module, course benefits, and a FAQ section.",
         "technologies": ["HTML", "CSS", "JavaScript"],
         "projectThumbnail": "https://ik.imagekit.io/workamts/pc-hero-section.png?updatedAt=1751647148899",
@@ -19,7 +28,7 @@
     },
     {
         "projectName": "EcoCafe",
-        "projectTypeSite": "Ecommerce",
+        "projectTypeSite": "#Negocio",
         "synopsis": "Fictional online store for an artisanal coffee brand. Includes a product catalog, a functional shopping cart, payment simulation, and an administrator dashboard.",
         "technologies": ["HTML", "CSS", "JavaScript"],
         "projectThumbnail": "https://i.postimg.cc/26s5t3cg/127-0-0-1-5500-index-html-7.png",

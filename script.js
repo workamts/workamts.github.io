@@ -105,113 +105,106 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 (function(){
-  const MIN_W = 768;
+    const MIN_W = 768;
 
-  let overlay = null;
-  const debounce = (fn, t=80) => {
-    let id;
-    return (...a) => { clearTimeout(id); id = setTimeout(()=>fn(...a), t); };
-  };
+    let overlay = null;
+    const debounce = (fn, t=80) => {
+        let id;
+        return (...a) => { clearTimeout(id); id = setTimeout(()=>fn(...a), t); };
+    };
 
-  function createOverlay() {
-    const heroTitle = document.getElementById('hero-title');
-    const heroContent = document.getElementById('hero-content');
-    if (!heroTitle || !heroContent) return;
+    function createOverlay() {
+        const heroTitle = document.getElementById('hero-title');
+        const heroContent = document.getElementById('hero-content');
+        if (!heroTitle || !heroContent) return;
 
-    // elimina overlay viejo si existe
-    if (overlay) overlay.remove();
+        // elimina overlay viejo si existe
+        if (overlay) overlay.remove();
 
-    // crea overlay DENTRO del mismo contenedor
-    overlay = document.createElement('div');
-    overlay.id = 'hero-title-overlay';
-    overlay.style.position = 'absolute';
-    overlay.style.pointerEvents = 'none';
-    overlay.style.zIndex = 2;
-    overlay.style.overflow = 'visible';
-    overlay.style.display = 'none'; // se activa en update
-    overlay.style.top = '0';
-    overlay.style.left = '0';
-    overlay.style.width = '100%';
-    overlay.style.height = '100%';
-    overlay.style.background = 'none';
+        // crea overlay DENTRO del mismo contenedor
+        overlay = document.createElement('div');
+        overlay.id = 'hero-title-overlay';
+        overlay.style.position = 'absolute';
+        overlay.style.pointerEvents = 'none';
+        overlay.style.zIndex = 2;
+        overlay.style.overflow = 'visible';
+        overlay.style.display = 'none'; // se activa en update
+        overlay.style.top = '0';
+        overlay.style.left = '0';
+        overlay.style.width = '100%';
+        overlay.style.height = '100%';
+        overlay.style.background = 'none';
 
-    // Copia el HTML del título
-    overlay.innerHTML = heroTitle.innerHTML;
+        // Copia el HTML del título
+        overlay.innerHTML = heroTitle.innerHTML;
 
-    // Copia TODOS los estilos relevantes del heroTitle
-    const cs = window.getComputedStyle(heroTitle);
-    overlay.style.fontFamily = cs.fontFamily;
-    overlay.style.fontSize = cs.fontSize;
-    overlay.style.fontWeight = cs.fontWeight;
-    overlay.style.lineHeight = cs.lineHeight;
-    overlay.style.letterSpacing = cs.letterSpacing;
-    overlay.style.textTransform = cs.textTransform;
-    overlay.style.textAlign = cs.textAlign;
-    overlay.style.whiteSpace = cs.whiteSpace;
-    overlay.style.wordBreak = cs.wordBreak;
-    overlay.style.wordWrap = cs.wordWrap;
-    overlay.style.padding = cs.padding;
-    overlay.style.margin = cs.margin;
+        // Copia TODOS los estilos relevantes del heroTitle
+        const cs = window.getComputedStyle(heroTitle);
+        overlay.style.fontFamily = cs.fontFamily;
+        overlay.style.fontSize = cs.fontSize;
+        overlay.style.fontWeight = cs.fontWeight;
+        overlay.style.lineHeight = cs.lineHeight;
+        overlay.style.letterSpacing = cs.letterSpacing;
+        overlay.style.textTransform = cs.textTransform;
+        overlay.style.textAlign = cs.textAlign;
+        overlay.style.whiteSpace = cs.whiteSpace;
+        overlay.style.wordBreak = cs.wordBreak;
+        overlay.style.wordWrap = cs.wordWrap;
+        overlay.style.padding = cs.padding;
+        overlay.style.margin = cs.margin;
 
-    // Forzar color blanco a todos los elementos del overlay
-    overlay.querySelectorAll('*').forEach(el => {
-      el.style.color = 'white';
-      el.style.webkitTextFillColor = '#e6f4e4';
-      el.style.background = 'none';
-      el.style.webkitBackgroundClip = 'unset';
-      el.style.backgroundClip = 'unset';
+        // Forzar color blanco a todos los elementos del overlay
+        overlay.querySelectorAll('*').forEach(el => {
+            el.style.color = 'white';
+            el.style.webkitTextFillColor = '#e6f4e4';
+            el.style.background = 'none';
+            el.style.webkitBackgroundClip = 'unset';
+            el.style.backgroundClip = 'unset';
+        });
+
+        // Posicionar overlay exactamente encima del heroTitle
+        heroTitle.style.position = 'relative';
+        heroTitle.appendChild(overlay);
+
+        updateOverlay();
+    }
+
+    function updateOverlay() {
+        const heroTitle = document.getElementById('hero-title');
+        const heroContent = document.getElementById('hero-content');
+        if (!heroTitle || !overlay || !heroContent) return;
+
+        if (window.innerWidth <= MIN_W) {
+            overlay.style.display = 'none';
+            return;
+        }
+        overlay.style.display = 'block';
+
+        // Bounding rects relativos al viewport
+        const titleRect = heroTitle.getBoundingClientRect();
+        const contentRect = heroContent.getBoundingClientRect();
+
+        // Calcula el borde derecho del área borrosa relativo al título
+        const rightEdge = contentRect.right - titleRect.left;
+        // El overlay solo muestra lo que está a la derecha del área borrosa
+        overlay.style.clipPath = `inset(0px 0px 0px ${Math.max(0, Math.round(rightEdge))}px)`;
+        overlay.style.webkitClipPath = overlay.style.clipPath;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            createOverlay();
+            // En cada resize y fonts.ready, recrea el overlay (no solo updateOverlay)
+            window.addEventListener('resize', debounce(() => {
+                createOverlay();
+            }, 70));
+            window.addEventListener('scroll', debounce(updateOverlay, 30));
+            if (document.fonts && document.fonts.ready) {
+                document.fonts.ready.then(() => setTimeout(createOverlay, 50));
+            }
+        }, 50);
     });
-
-    // Posicionar overlay exactamente encima del heroTitle
-    heroTitle.style.position = 'relative';
-    heroTitle.appendChild(overlay);
-
-    updateOverlay();
-  }
-
-  function updateOverlay() {
-    const heroTitle = document.getElementById('hero-title');
-    const heroContent = document.getElementById('hero-content');
-    if (!heroTitle || !overlay || !heroContent) return;
-
-    if (window.innerWidth <= MIN_W) {
-      overlay.style.display = 'none';
-      return;
-    }
-    overlay.style.display = 'block';
-
-    // Bounding rects relativos al viewport
-    const titleRect = heroTitle.getBoundingClientRect();
-    const contentRect = heroContent.getBoundingClientRect();
-
-    // Calcula el borde derecho del área borrosa relativo al título
-    const rightEdge = contentRect.right - titleRect.left;
-    // El overlay solo muestra lo que está a la derecha del área borrosa
-    overlay.style.clipPath = `inset(0px 0px 0px ${Math.max(0, Math.round(rightEdge))}px)`;
-    overlay.style.webkitClipPath = overlay.style.clipPath;
-  }
-
-document.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => {
-    createOverlay();
-    // En cada resize y fonts.ready, recrea el overlay (no solo updateOverlay)
-    window.addEventListener('resize', debounce(() => {
-      createOverlay();
-    }, 70));
-    window.addEventListener('scroll', debounce(updateOverlay, 30));
-    if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(() => setTimeout(createOverlay, 50));
-    }
-  }, 50);
-});
 })();
-
-
-
-
-
-
-
 
 
 
@@ -264,10 +257,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const techIcons = {
             html: 'assets/icons/html5.png',
             css: 'assets/icons/css3.png',
-            javascript: 'assets/icons/js.png',
-            python: 'assets/icons/python.png',
+            javascript: 'assets/icons/js1.png',
+            bootstrap: 'assets/icons/bootstrap.png',
+            tailwind: 'assets/icons/tailwind.png',
             react: 'assets/icons/react.png',
-            tailwind: 'assets/icons/tailwind.png'
+            python: 'assets/icons/python.png'
         };
 
         const ul = document.createElement('ul');
@@ -328,32 +322,41 @@ document.addEventListener('DOMContentLoaded', () => {
         // Technologies
         const techList = createTechList(project.technologies || []);
 
-        // SVG from GitHub
-        const githubSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        githubSvg.classList.add('project__github');
-        githubSvg.setAttribute('width', '40');
-        githubSvg.setAttribute('height', '40');
-        githubSvg.setAttribute('viewBox', '0 0 20 20');
-        githubSvg.setAttribute('aria-label', 'Go to the GitHub repository');
-        githubSvg.style.cursor = 'pointer';
-
-        const githubPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        githubPath.setAttribute('d', 'M10 0.5C4.75 0.5 0.5 4.75 0.5 10c0 4.2 2.7 7.75 6.45 9 .47.09.65-.2.65-.45v-1.6c-2.62.57-3.17-1.26-3.17-1.26-.43-1.1-1.05-1.39-1.05-1.39-.86-.59.07-.58.07-.58.95.07 1.45.98 1.45.98.85 1.45 2.23 1.03 2.78.79.09-.62.33-1.03.6-1.27-2.09-.24-4.29-1.05-4.29-4.68 0-1.03.37-1.87.98-2.53-.1-.24-.43-1.21.09-2.53 0 0 .81-.26 2.65 1 .77-.21 1.6-.32 2.43-.32s1.66.11 2.43.32c1.84-1.26 2.65-1 2.65-1 .52 1.32.19 2.29.09 2.53.61.66.98 1.5.98 2.53 0 3.64-2.2 4.44-4.29 4.68.34.29.64.86.64 1.73v2.56c0 .25.18.54.65.45C16.8 17.75 19.5 14.2 19.5 10c0-5.25-4.25-9.5-9.5-9.5z');
-        githubPath.setAttribute('fill', '#000');
-        githubSvg.appendChild(githubPath);
-
+        // GitHub link with SVG
+        let githubLink = null;
         if (project.githubURL) {
-            githubSvg.addEventListener('click', (e) => {
+            githubLink = document.createElement('a');
+            githubLink.href = project.githubURL;
+            githubLink.target = "_blank";
+            githubLink.rel = "noopener noreferrer";
+            githubLink.className = "project__github-link";
+            githubLink.setAttribute("aria-label", "Go to the GitHub repository");
+
+            // Stop propagation so parent card click doesn't also fire
+            githubLink.addEventListener('click', (e) => {
                 e.stopPropagation();
-                window.open(project.githubURL, '_blank');
+                // allow default navigation (no preventDefault)
             });
+
+            const githubSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            githubSvg.classList.add('project__github');
+            githubSvg.setAttribute('width', '40');
+            githubSvg.setAttribute('height', '40');
+            githubSvg.setAttribute('viewBox', '0 0 20 20');
+
+            const githubPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            githubPath.setAttribute('d', 'M10 0.5C4.75 0.5 0.5 4.75 0.5 10c0 4.2 2.7 7.75 6.45 9 .47.09.65-.2.65-.45v-1.6c-2.62.57-3.17-1.26-3.17-1.26-.43-1.1-1.05-1.39-1.05-1.39-.86-.59.07-.58.07-.58.95.07 1.45.98 1.45.98.85 1.45 2.23 1.03 2.78.79.09-.62.33-1.03.6-1.27-2.09-.24-4.29-1.05-4.29-4.68 0-1.03.37-1.87.98-2.53-.1-.24-.43-1.21.09-2.53 0 0 .81-.26 2.65 1 .77-.21 1.6-.32 2.43-.32s1.66.11 2.43.32c1.84-1.26 2.65-1 2.65-1 .52 1.32.19 2.29.09 2.53.61.66.98 1.5.98 2.53 0 3.64-2.2 4.44-4.29 4.68.34.29.64.86.64 1.73v2.56c0 .25.18.54.65.45C16.8 17.75 19.5 14.2 19.5 10c0-5.25-4.25-9.5-9.5-9.5z');
+            githubPath.setAttribute('fill', '#000');
+
+            githubSvg.appendChild(githubPath);
+            githubLink.appendChild(githubSvg);
         }
 
         // Container technologies and GitHub
         const techGithubContainer = document.createElement('div');
         techGithubContainer.className = 'project__container--tech-github';
         techGithubContainer.appendChild(techList);
-        techGithubContainer.appendChild(githubSvg);
+        if (githubLink) techGithubContainer.appendChild(githubLink);
 
         // Arrow SVG
         const arrow = document.createElement('span');
@@ -381,7 +384,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         desc.appendChild(h4);
-        desc.appendChild(spanType);
+        techGithubContainer.prepend(spanType);
         desc.appendChild(p);
         desc.appendChild(techGithubContainer);
 
