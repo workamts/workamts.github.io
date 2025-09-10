@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 (function(){
-    const MIN_W = 768;
+    const MIN_W = 767.9;
 
     let overlay = null;
     const debounce = (fn, t=80) => {

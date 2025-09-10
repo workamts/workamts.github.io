@@ -100,6 +100,19 @@ a {
 }
 
 
+/* Color de selección de texto */
+::selection {
+    background: #1EB908;
+    color: #fff;
+}
+
+/* Para Firefox */
+::-moz-selection {
+    background: #1EB908;
+    color: #fff;
+}
+
+
 
 /*======================================
 =   Hero Section
@@ -598,9 +611,47 @@ main {
     color: var(--color-senary);
 }
 
-#striped-background,
-#rhombus-container {
+#striped-background {
     display: none;
+}
+
+
+/*--- Rhombus icon ---*/
+#rhombus-container {
+    position: absolute;
+    bottom: 30%;
+    right: 0;
+    z-index: -1;
+    display: flex;
+    width: auto;
+    height: auto;
+}
+
+.rhombus__outlined {
+    transform: rotate(45deg);
+}
+
+.rhombus__outlined.r1 {
+    position: relative;
+    top: -60px;
+    left: 10px;
+    width: 70px;
+    height: 70px;
+    border: 5px solid #c6eec6;
+}
+
+.rhombus__outlined.r2 {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #c6eec6;
+}
+
+.rhombus__outlined.r3 {
+    position: relative;
+    right: 115px;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #c6eec6;
 }
 
 
@@ -637,39 +688,18 @@ main {
     }
 
     #rhombus-container {
-        position: absolute;
-        bottom: 5%;
         left: 20%;
+        bottom: 5%;
         display: flex;
-        width: auto;
-        height: auto;
-    }
-
-    .rhombus__outlined {
-        transform: rotate(45deg);
     }
 
     .rhombus__outlined.r1 {
-        position: relative;
         top: -60px;
         left: 10px;
-        width: 70px;
-        height: 70px;
-        border: 5px solid #c6eec6;
-    }
-
-    .rhombus__outlined.r2 {
-        width: 40px;
-        height: 40px;
-        border: 3px solid #c6eec6;
     }
 
     .rhombus__outlined.r3 {
-        position: relative;
         right: 115px;
-        width: 30px;
-        height: 30px;
-        border: 3px solid #c6eec6;
     }
 }
 /*------------- END MEDIA QUERIES -------------*/
@@ -689,9 +719,9 @@ main {
     align-items: center;
     gap: 50px;
     width: 100%;
-    padding: 50px 30px 80px;
+    padding: 25px 30px 80px;
     color: var(--color-octonary);
-    box-shadow: 0px 5px 3px #182e16;
+    box-shadow: 0px 5px 3px var(--color-quinary);
 }
 
 
@@ -978,45 +1008,45 @@ main {
 }
 
 .skills__item[aria-label="HTML5"] {
-    filter: drop-shadow(0 0 16px var(--color-html));
+    filter: drop-shadow(0 0 10px var(--color-html));
 }
 
 .skills__item[aria-label="CSS3"] {
-    filter: drop-shadow(0 0 16px var(--color-css));
+    filter: drop-shadow(0 0 10px var(--color-css));
 }
 
 .skills__item[aria-label="JavaScript"] {
-    filter: drop-shadow(0 0 16px var(--color-js));
+    filter: drop-shadow(0 0 10px var(--color-js));
 }
 
 .skills__item[aria-label="Bootstrap"] {
-    filter: drop-shadow(0 0 16px var(--color-bootstrap)) !important;
+    filter: drop-shadow(0 0 10px var(--color-bootstrap)) !important;
 }
 
 .skills__item[aria-label="React"] {
-    filter: drop-shadow(0 0 16px var(--color-react)) !important;
+    filter: drop-shadow(0 0 10px var(--color-react)) !important;
 }
 
 .skills__item[aria-label="Figma"] {
-    filter: drop-shadow(0 0 16px var(--color-figma));
+    filter: drop-shadow(0 0 10px var(--color-figma));
 }
 
 .skills__item[aria-label="Python"] {
     filter:
-        drop-shadow(-8px -8px 16px var(--color-python1))
-        drop-shadow(8px 8px 16px var(--color-python2)) !important;
+        drop-shadow(-8px -8px 10px var(--color-python1))
+        drop-shadow(8px 8px 10px var(--color-python2)) !important;
 }
 
 .skills__item[aria-label="GitHub"] {
-    filter: drop-shadow(0 0 16px var(--color-github));
+    filter: drop-shadow(0 0 10px var(--color-github));
 }
 
 .skills__item[aria-label="Git"] {
-    filter: drop-shadow(0 0 16px var(--color-git));
+    filter: drop-shadow(0 0 10px var(--color-git));
 }
 
 .skills__item[aria-label="VSCode"] {
-    filter: drop-shadow(0 0 16px var(--color-vscode)) !important;
+    filter: drop-shadow(0 0 10px var(--color-vscode)) !important;
 }
 
 
@@ -1031,92 +1061,70 @@ main {
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding-block: 60px 100px;
-    scroll-margin-top: 50px;
-    color: var(--color-octonary);
+    padding: 50px 30px;
     background-color: var(--color-decimal);
 }
 
 #contact-title {
-    position: relative;
-    font-size: 2.5rem;
-    font-weight: 900;
-    text-align: center;
-    color: var(--color-primary);
+    width: 100%;
+    font-size: 2.2rem;
+    color: #182e16;
 }
 
-.contact__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 50px;
-    width: clamp(300px, 85vw, 1000px);
-    margin-top: 50px;
-}
-
-.contact__info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: clamp(300px, 85vw, 500px);
-}
-
-.contact__title {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--color-secondary);
-}
-
-.contact__description {
+#contact-description {
+    width: 100%;
     color: var(--color-senary);
-    font-size: 1rem;
-    line-height: 1.5;
-    text-align: center;
+}
+
+#contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
 }
 
 .contact__methods {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 25px;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    margin-top: 30px;
 }
 
 .contact__item {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 5px;
 }
 
 .contact__icon {
-    width: 38px;
-    height: auto;
-    padding: 10px;
+    width: 32px;
+    height: 32px;
+    padding: 7px;
     border-radius: 50%;
     object-fit: contain;
-    color: var(--color-tertiary);
-    background-color: var(--color-secondary);
+    color: #182e16;
+    background-color: #1EB908;
 }
 
 .contact__text--container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     transition: color .4s ease;
 }
 
 .contact__text--container span {
-    font-size: 1rem;
-    color: var(--color-secondary);
+    font-weight: 600;
+    color: #182e16;
 }
 
 .contact__text--container small,
 .contact__text--container a {
     font-size: .9rem;
-    color: var(--color-octonary);
+    color: var(--color-senary);
 }
 
 .contact__text--container a:hover {
@@ -1132,22 +1140,23 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 15px;
-    width: clamp(300px, 80vw, 450px);
+    gap: 30px;
+    width: 100%;
+    margin-top: 50px;
 }
 
 .input__group {
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     width: 100%;
 }
 
-.input__group label,
-.input__group label span {
+.input__group label {
     font-size: 1.1rem;
     font-weight: 600;
-    color: var(--color-primary);
+    color: #182e16;
 }
 
 .input__group small {
@@ -1163,32 +1172,22 @@ main {
     width: 100%;
     padding: 10px;
     border: none;
-    border: 1px solid var(--color-primary);
-    border-radius: 5px;
+    border-bottom: 1px solid var(--color-senary);
+    border-radius: 3px 3px 0 0;
     outline: none;
-    font-size: 1rem;
-    letter-spacing: .05rem;
-    background-color: var(--color-decimal);
+    font-size: .9rem;
+    background-color: transparent;
     transition: background-color .4s ease;
-}
-
-.input__group input:hover,
-.input__group textarea:hover {
-    background: var(--color-quinary);
 }
 
 .input__group input:focus,
 .input__group textarea:focus {
-    outline: 2px solid var(--color-secondary);
-    outline-offset: 1.5px;
-    color: var(--color-quaternary);
-    background: var(--color-secondary);
+    border-color: #1EB908;
 }
 
 .input__group input.valid,
 .input__group textarea.valid {
     color: var(--color-undecimal);
-    background: var(--color-tetradecimal);
 }
 
 .input__group input.invalid,
@@ -1210,15 +1209,15 @@ main {
 /* Browser autocomplete */
 .input__group input:-webkit-autofill,
 .input__group textarea:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 1000px var(--color-tetradecimal) inset !important;
     -webkit-text-fill-color: var(--color-undecimal) !important;
     transition: background-color 9999s ease-in-out 0s;
 }
 
 /* Message help */
 .input__group small {
-    margin-top: 3px;
-    margin-left: 3px;
+    position: absolute;
+    left: 3px;
+    bottom: -23px;
     font-size: .9rem;
     letter-spacing: .05rem;
     color: var(--color-octonary);
@@ -1228,28 +1227,25 @@ main {
 /*---------- Send button ----------*/
 #contact-button-container {
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    width: 100%;
 }
 
 #contact-button-container button {
     position: relative;
-    width: 80%;
-    padding: 5px 20px;
-    border: 1px solid var(--color-primary);
+    width: 40%;
+    padding: 10px 20px;
+    border: 1px solid var(--color-senary);
     border-radius: 5px;
     overflow: hidden;
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: .8rem;
+    font-weight: 900;
     letter-spacing: .1rem;
     text-decoration: none;
-    color: var(--color-quinary);
-    background-color: var(--color-secondary);
+    color: #182e16;
     cursor: pointer;
-    transition: all 1s;
+    transition: all .3s;
 }
-
 
 /* Disabled state styles */
 #contact-button-container button:disabled {
@@ -1258,9 +1254,7 @@ main {
 }
 
 #contact-button-container button:not(:disabled):hover {
-    color: var(--color-senary);
     opacity: 0.9;
-    transform: translateY(2px);
 }
 
 #contact-button-container button:not(:disabled)::before {
@@ -1271,8 +1265,7 @@ main {
     z-index: -1;
     width: 0%;
     height: 100%;
-    background-color: var(--color-quaternary);
-    transform: skewX(45deg);
+    background-color: var(--color-tetradecimal);
     filter: brightness(95%);
     transition: all 1s;
 }
@@ -1283,21 +1276,19 @@ main {
 
 
 /*---------- MEDIA QUERIES: CONTACT FOR TABLET AND DESKTOP ----------*/
-@media (min-width: 992px) {
-    .contact__content {
+@media (min-width: 768px) {
+    #contact-content {
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
-        margin-top: 60px;
+        gap: 0;
+        max-width: 1024px;
+        margin-top: 50px;
     }
-
-    .contact__info {
-        align-items: flex-start;
-        width: 400px;
-    }
-
-    .contact__description {
-        text-align: start;
+    #contact-title,
+    .contact__methods {
+        width: auto;
+        margin: 0;
     }
 
     .contact__methods {
@@ -1305,16 +1296,35 @@ main {
         flex-wrap: nowrap;
     }
 
-    .contact__item {
-        flex-direction: row;
-        gap: 12px;
+    #contact-description {
+        width: 400px;
+        margin-top: 10px;
+        text-align: center;
     }
 
-    .contact__text--container {
-        align-items: flex-start;
+    #contact-form {
+        width: 60%;
+        margin: 0;
+    }
+
+    #contact-button-container {
+        justify-content: center;
     }
 }
 
+@media (min-width: 1089px) {
+    #contact-form {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 68%;
+    }
+
+
+    .input__group.i1,
+    .input__group.i2 {
+        width: 47%;
+    }
+}
 /*---------- END MEDIA QUERIES ----------*/
 
 
@@ -1328,13 +1338,14 @@ footer {
     display: flex;
     justify-content: center;
     padding-top: 50px;
-    background-color: var(--color-primary);
+    background: #111;
+    backdrop-filter: blur(15px);
 }
 
 .footer__copy {
     width: clamp(300px, 90%, 1200px);
     padding-block: 20px;
-    border-top: 1px solid var(--color-quaternary);
+    border-top: 1px solid var(--color-quinary);
     font-size: .8rem;
     text-align: center;
     color: var(--color-quinary);
