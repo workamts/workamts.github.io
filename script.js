@@ -234,7 +234,7 @@ function applyCardImageAnimation(card) {
         animationFrame = requestAnimationFrame(() => {
             const rect = card.getBoundingClientRect();
             const x = ((e.clientX - rect.left) / rect.width - 0.5) * 5;
-            const y = ((e.clientY - rect.top) / rect.height - 0.5) * 5;
+            const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
 
             image.style.transform = `scale(1.05) translate(${x * 10}px, ${y * 10}px)`;
             image.style.transition = 'transform .4s ease-out';
