@@ -625,6 +625,7 @@ main {
     display: flex;
     width: auto;
     height: auto;
+    opacity: 0.3;
 }
 
 .rhombus__outlined {
@@ -637,13 +638,13 @@ main {
     left: 10px;
     width: 70px;
     height: 70px;
-    border: 5px solid #c6eec6;
+    border: 5px solid var(--color-quinary);
 }
 
 .rhombus__outlined.r2 {
     width: 40px;
     height: 40px;
-    border: 3px solid #c6eec6;
+    border: 3px solid var(--color-quinary);
 }
 
 .rhombus__outlined.r3 {
@@ -651,7 +652,7 @@ main {
     right: 115px;
     width: 30px;
     height: 30px;
-    border: 3px solid #c6eec6;
+    border: 3px solid var(--color-quinary);
 }
 
 
@@ -680,11 +681,12 @@ main {
         height: 200px;
         background: repeating-linear-gradient(
             45deg,
-            #c6eec6,
-            #c6eec6 1px,
+            var(--color-quinary),
+            var(--color-quinary) 1px,
             transparent 4px,
             transparent 12px
         );
+        opacity: 0.3;
     }
 
     #rhombus-container {
@@ -720,8 +722,8 @@ main {
     gap: 50px;
     width: 100%;
     padding: 25px 30px 80px;
+    scroll-margin-top: 25px;
     color: var(--color-octonary);
-    box-shadow: 0px 5px 3px var(--color-quinary);
 }
 
 
@@ -973,18 +975,20 @@ main {
 ======================================*/
 
 .content__skills {
-    position: relative;
-    display: flex;
+    display: none;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 20px;
     width: 100%;
-    height: 100%;
-    padding: 70px 30px 50px;
+    height: auto;
+    padding: 50px 30px;
     background-color: var(--color-decimal);
 }
 
 #skills-title {
+    width: 100%;
+    max-width: 1200px;
     font-size: 2.2rem;
     color: #182e16;
 }
@@ -992,60 +996,76 @@ main {
 .skills__list--container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 35px;
-    width: clamp(300px, 85vw, 800px);
+    justify-content: space-between;
+    gap: 20px;
+    width: auto;
     height: auto;
 }
 
-.skills__item {
-    width: 128px;
-    height: 128px;
+.skills__item--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 20px;
+    border: 1px solid var(--color-quinary);
+    border-radius: 5px;
     cursor: pointer;
-    padding: 15px;
-    border-radius: 8px 8px 0 0;
-    background-color: transparent;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    transition: transform .2s ease-in-out;
 }
 
-.skills__item[aria-label="HTML5"] {
+.skills__item {
+    width: 48px;
+    height: 48px;
+    transition: filter .3s ease-in-out;
+}
+
+.skills__item--container:hover {
+    transform: translateY(-5px);
+}
+
+.skills__item--container:hover .skills__item[aria-label="HTML5"] {
     filter: drop-shadow(0 0 10px var(--color-html));
 }
 
-.skills__item[aria-label="CSS3"] {
+.skills__item--container:hover .skills__item[aria-label="CSS3"] {
     filter: drop-shadow(0 0 10px var(--color-css));
 }
 
-.skills__item[aria-label="JavaScript"] {
+.skills__item--container:hover .skills__item[aria-label="JavaScript"] {
     filter: drop-shadow(0 0 10px var(--color-js));
 }
 
-.skills__item[aria-label="Bootstrap"] {
+.skills__item--container:hover .skills__item[aria-label="Bootstrap"] {
     filter: drop-shadow(0 0 10px var(--color-bootstrap)) !important;
 }
 
-.skills__item[aria-label="React"] {
+.skills__item--container:hover .skills__item[aria-label="React"] {
     filter: drop-shadow(0 0 10px var(--color-react)) !important;
 }
 
-.skills__item[aria-label="Figma"] {
+.skills__item--container:hover .skills__item[aria-label="Figma"] {
     filter: drop-shadow(0 0 10px var(--color-figma));
 }
 
-.skills__item[aria-label="Python"] {
+.skills__item--container:hover .skills__item[aria-label="Python"] {
     filter:
         drop-shadow(-8px -8px 10px var(--color-python1))
         drop-shadow(8px 8px 10px var(--color-python2)) !important;
 }
 
-.skills__item[aria-label="GitHub"] {
+.skills__item--container:hover .skills__item[aria-label="GitHub"] {
     filter: drop-shadow(0 0 10px var(--color-github));
 }
 
-.skills__item[aria-label="Git"] {
+.skills__item--container:hover .skills__item[aria-label="Git"] {
     filter: drop-shadow(0 0 10px var(--color-git));
 }
 
-.skills__item[aria-label="VSCode"] {
+.skills__item--container:hover .skills__item[aria-label="VSCode"] {
     filter: drop-shadow(0 0 10px var(--color-vscode)) !important;
 }
 
