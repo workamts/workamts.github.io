@@ -208,6 +208,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+// MODAL CV
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById("cv-modal");
+    const btn = document.getElementById("cv-btn");
+    const cancelBtn = document.getElementById("cancel-btn");
+
+    if (!modal || !btn || !cancelBtn) return;
+
+    // Mostrar modal
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        modal.style.display = "flex";
+    });
+
+    // Cerrar modal al hacer clic fuera del contenido del modal
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+
+    // Cerrar modal al hacer clic en cancelar
+    cancelBtn.addEventListener('click', () => {
+        modal.style.display = "none";
+    });
+
+    // Cerrar modal al hacer scroll si está abierto
+    window.addEventListener('scroll', () => {
+        if (modal.style.display === "flex") {
+            modal.style.display = "none";
+        }
+    });
+
+    // Cerrar modal al hacer clic en cualquier parte fuera del modal
+    document.addEventListener('mousedown', (e) => {
+        if (modal.style.display === "flex" && !modal.contains(e.target) && e.target !== btn) {
+            modal.style.display = "none";
+        }
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*======================================
 =   PROJECTS
 ======================================*/

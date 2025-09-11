@@ -139,12 +139,25 @@
             <span id="vline"></span>
         </div>
         <div id="hero-links" role="group" aria-label="Links to social media and contact">
+            <!-- Botón para descargar CV -->
+            <button id="cv-btn">CV</button>
+
+            <!-- Modal de confirmación -->
+            <div id="cv-modal">
+                <h2 id="modal-title">¿Quieres descargar mi CV?</h2>
+                <div id="modal-actions">
+                    <a id="download-btn" href="assets/files/CV Anderson Tovar Frontend Designer and Developer.pdf" download>Sí, descargar</a>
+                    <button id="cancel-btn">Cancelar</button>
+                </div>
+            </div>
+
             <a class="social__btn" id="social-btn-github" href="https://github.com/workamts" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub profile" >
                 <i class="fab fa-github"></i>
             </a>
             <a class="social__btn" id="social-btn-linkedin" href="https://www.linkedin.com/in/workamts" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn profile" >
                 <i class="fab fa-linkedin"></i>
             </a>
+
         </div>
     </section>
 

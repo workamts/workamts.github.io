@@ -405,6 +405,11 @@ body.open-menu #header-open-nav-button {
     width: 40px;
     height: 40px;
     border-radius: 8px;
+    transition: transform .2s;
+}
+
+.social__btn:hover {
+    transform: translateY(-2px);
 }
 
 #social-btn-github {
@@ -418,11 +423,86 @@ body.open-menu #header-open-nav-button {
 
 .social__btn i {
     font-size: 1.2rem;
-    transition: color .2s, transform .2s;
 }
 
-.social__btn i:hover {
-    transform: translateY(-1px) scale(1.05);
+
+/*---------- Botón para descargar pdf ----------*/
+#cv-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: .9rem;
+    color: #fff;
+    cursor: pointer;
+    background-color: #1EB908;
+    transition: background-color .3s;
+}
+
+#cv-btn:hover {
+    background-color: #182e16;
+}
+
+
+/*--- Modal ---*/
+#cv-modal {
+    position: fixed;
+    right: 20px;
+    bottom: 60px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: auto;
+    height: auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    backdrop-filter: blur(15px);
+}
+
+#modal-title {
+    font-size: .9rem;
+    font-weight: 500;
+    color: var(--color-duodecimal);
+}
+
+#modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#download-btn, #cancel-btn {
+    width: max-content;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: .8rem;
+    cursor: pointer;
+}
+
+#download-btn {
+    border: 1px solid var(--color-duodecimal);
+    color: var(--color-duodecimal);
+    transition: all .3s;
+}
+
+#download-btn:hover {
+    border-color: var(--color-octonary);
+    background-color: var(--color-octonary);
+}
+
+#cancel-btn {
+    background-color: var(--color-quinary);
+    color: var(--color-senary);
+    transition: filter .3s;
+}
+
+#cancel-btn:hover {
+    filter: brightness(0.8);
 }
 
 
@@ -721,7 +801,7 @@ main {
     align-items: center;
     gap: 50px;
     width: 100%;
-    padding: 25px 30px 80px;
+    padding: 25px 30px 100px;
     scroll-margin-top: 25px;
     color: var(--color-octonary);
 }
@@ -1081,7 +1161,7 @@ main {
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 50px 30px;
+    padding: 70px 30px;
     background-color: var(--color-decimal);
 }
 
@@ -1287,7 +1367,7 @@ main {
     height: 100%;
     background-color: var(--color-tetradecimal);
     filter: brightness(95%);
-    transition: all 1s;
+    transition: all .8s ease-in-out;
 }
 
 #contact-button-container button:not(:disabled):hover::before {
