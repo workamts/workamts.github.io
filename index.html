@@ -41,22 +41,19 @@
     <link rel="manifest" href="assets/icons/site.webmanifest" />
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="all" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="all" />
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="all" />
 
     <!-- Main CSS file -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" media="all" >
 </head>
 <body role="document" class="no-scroll">
-    <!-- Anchor point for the top of the page -->
-    <div id="home-anchor" style="position: relative; top: -100px;" aria-hidden="true"></div>
-
     <!-- Hero Section -->
     <section id="hero" aria-label="Hero section">
         <div id="hero-content">
@@ -97,7 +94,7 @@
                     </label>
 
                     <!-- Navigation Menu -->
-                    <nav id="header-nav" role="navigation" aria-label="Main menu" tabindex="-1">
+                    <nav id="header-nav" role="navigation" aria-label="Main menu" tabindex="-1" aria-hidden="true">
                         <!-- Close menu button -->
                         <label id="header-nav-close-button"
                             for="open-menu"
@@ -128,10 +125,10 @@
             </header>
             <div id="intro-text">
                 <span id="intro-text-name">HELLO, MY NAME IS ANDERSON</span>
-                <h1 id="hero-title" data-text="WEB DESIGNER AND DEVELOPER">WEB DESIGNER AND DEVELOPER</h1>
+                <h1 id="hero-title" data-text="WEB DESIGNER AND DEVELOPER" tabindex="0">WEB DESIGNER AND DEVELOPER</h1>
             </div>
         </div>
-        <div id="vh-icons">
+        <div id="vh-icons" aria-hidden="true">
             <span id="vline"></span>
             <span id="diamond"></span>
             <span id="diamond-outlined"></span>
@@ -139,78 +136,68 @@
             <span id="vline"></span>
         </div>
         <div id="hero-links" role="group" aria-label="Links to social media and contact">
-            <!-- Botón para descargar CV -->
-            <button id="cv-btn">CV</button>
-
-            <!-- Modal de confirmación -->
-            <div id="cv-modal">
-                <h2 id="modal-title">¿Quieres descargar mi CV?</h2>
+            <!-- CV Download Button -->
+            <button id="cv-btn" aria-haspopup="dialog" aria-controls="cv-modal" aria-label="Download CV">CV</button>
+            <!-- Modal confirmation -->
+            <div id="cv-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-actions">
+                <h2 id="modal-title">Do you want to download my CV?</h2>
                 <div id="modal-actions">
-                    <a id="download-btn" href="assets/files/CV Anderson Tovar Frontend Designer and Developer.pdf" download>Sí, descargar</a>
-                    <button id="cancel-btn">Cancelar</button>
+                    <a id="download-btn" href="assets/files/CV Anderson Tovar Frontend Designer and Developer.pdf" download aria-label="Download CV">Yes, download</a>
+                    <button id="cancel-btn" aria-label="Cancel CV download">Cancel</button>
                 </div>
             </div>
 
+            <!-- Social media buttons -->
             <a class="social__btn" id="social-btn-github" href="https://github.com/workamts" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub profile" >
-                <i class="fab fa-github"></i>
+                <i class="fab fa-github" aria-hidden="true"></i>
             </a>
             <a class="social__btn" id="social-btn-linkedin" href="https://www.linkedin.com/in/workamts" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn profile" >
-                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-linkedin" aria-hidden="true"></i>
             </a>
-
         </div>
     </section>
-
 
     <!-- Main Content -->
     <main role="main">
         <!-- Services Section -->
-        <section id="services">
+        <section id="services" aria-labelledby="services-title">
             <div id="services-container">
-                <!-- Diseño UI/UX -->
-                <div class="services__block design">
-                    <h2 class="services__title">Diseño UI/UX</h2>
+                <!-- UI/UX Design -->
+                <div class="services__block design" aria-label="UI/UX Design">
+                    <h2 class="services__title" id="services-title">UI/UX Design</h2>
                     <p class="services__text">
-                        Como diseñador en Figma, me apasiona transformar ideas en interfaces claras,
-                        modernas y atractivas. Me enfoco en la usabilidad, creando prototipos que no
-                        solo se ven bien, sino que también comunican y funcionan. Creo experiencias
-                        centradas en el usuario, cuidando la coherencia visual y la accesibilidad en
-                        cada detalle.
+                        As a Figma designer, I am passionate about transforming ideas into clear, modern, and attractive interfaces. I focus on usability, creating prototypes that not only look good but also communicate and function well. I create user-centered experiences, ensuring visual consistency and accessibility in every detail.
                     </p>
                 </div>
 
-                <div id="striped-background"></div>
-                <div id="rhombus-container">
+                <div id="striped-background" aria-hidden="true"></div>
+                <div id="rhombus-container" aria-hidden="true">
                     <div class="rhombus__outlined r1"></div>
                     <div class="rhombus__outlined r2"></div>
                     <div class="rhombus__outlined r3"></div>
                 </div>
 
-                <!-- Desarrollo Frontend -->
-                <div class="services__block development">
-                    <h2 class="services__title">Desarrollo Frontend</h2>
+                <!-- Frontend Development -->
+                <div class="services__block development" aria-label="Frontend Development">
+                    <h2 class="services__title" id="services-title">Frontend Development</h2>
                     <p class="services__text">
-                        Con experiencia en HTML, CSS, JavaScript, Bootstrap y React, convierto diseños
-                        en productos digitales reales y funcionales. Me especializo en interfaces
-                        responsivas, rápidas y accesibles, optimizadas para brindar la mejor experiencia
-                        al usuario en cualquier dispositivo. Disfruto unir la estética del diseño con la
-                        solidez del código para crear soluciones web completas.
+                        With experience in HTML, CSS, JavaScript, Bootstrap, and React, I turn designs into real, functional digital products. I specialize in responsive, fast, and accessible interfaces, optimized to provide the best user experience on any device. I enjoy combining design aesthetics with solid code to create complete web solutions.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Proyect Section -->
+        <!-- Projects Section -->
         <section id="projects" role="region" aria-labelledby="projects-heading">
             <div id="portfolio-intro">
                 <div id="portfolio-content">
                     <h2 id="portfolio-title">PORTFOLIO.</h2>
-                    <p id="portfolio-subtitle">Explora algunos de mis últimos desarrollos web y proyectos creativos.</p>
-                    <p id="portfolio-description">He trabajado en el desarrollo de aplicaciones frontend, dashboards interactivos y sitios web responsivos adaptados a distintos dispositivos. También he colaborado con startups, creado proyectos personales y desarrollado simulaciones de ecommerce con catálogo, carrito y pagos simulados.</p>
+                    <p id="portfolio-subtitle">Explore some of my latest web developments and creative projects.</p>
+                    <p id="portfolio-description">I have worked on the development of frontend applications, interactive dashboards, and responsive websites tailored to different devices. I have also collaborated with startups, created personal projects, and developed e-commerce simulations with catalogs, carts, and simulated payments.</p>
                 </div>
             </div>
 
-            <div id="projects-container">
+            <div id="projects-container" aria-live="polite">
                 <!-- Project charter template -->
                 <div class="project__card" role="article" aria-labelledby="project1-title">
                     <div class="project__container--image">
@@ -394,7 +381,7 @@
             <h2 id="contact-title">Send me a message!</h2>
             <p id="contact-description">Do you have a project in mind? I'm available to work on new projects and collaborations.</p>
             <div id="contact-content">
-                <ul class="contact__methods" role="list" aria-label="Información de contacto">
+                <ul class="contact__methods" role="list" aria-label="Contact information">
                     <li class="contact__item">
                         <svg class="contact__icon" role="img" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
                             <path d="M0 0h24v24H0z" fill="none"/>
@@ -430,7 +417,7 @@
                             autocomplete="name"
                             aria-required="true"
                             aria-describedby="name-help">
-                        <small id="name-help">Ingresa tu nombre, solo letras y espacios.</small>
+                        <small id="name-help">Enter your name, only letters and spaces.</small>
                     </div>
 
                     <!-- Email -->
