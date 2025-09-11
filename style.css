@@ -10,9 +10,9 @@
 :root {
     --font-main: 'Poppins', sans-serif;
     --font-secondary: 'Inter', sans-serif;
-    --color-primary: #0c1a26;
-    --color-secondary: #132736;
-    --color-tertiary: #29a3a3;
+    --color-primary: #182e16;
+    --color-secondary: #1eb908;
+    --color-tertiary: #B0BEC5;
     --color-quaternary: #f0e6d2;
     --color-quinary: #b0bec5;
     --color-senary: #16222e;
@@ -22,10 +22,10 @@
     --color-decimal: #f8f7f5;
     --color-undecimal: #439f37;
     --color-duodecimal: #e6f4e4;
-    --color-tridecimal: #ffe5e5;
+    --color-tridecimal: #222;
     --color-tetradecimal: #e5f0fb;
 
-    /* Color technologies */
+    /* Technology colors */
     --color-html: #e34f26;
     --color-css: #2965f1;
     --color-js: #f7df1e;
@@ -100,16 +100,11 @@ a {
 }
 
 
-/* Color de selección de texto */
-::selection {
-    background: #1EB908;
-    color: #fff;
-}
-
-/* Para Firefox */
+/* Text selection color */
+::selection,
 ::-moz-selection {
-    background: #1EB908;
-    color: #fff;
+    color: var(--color-nonary);
+    background-color: var(--color-secondary);
 }
 
 
@@ -146,6 +141,26 @@ a {
     );
 }
 
+#hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+    height: 100%;
+}
+
+#hero-bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+}
+
 #hero-content {
     display: flex;
     flex-direction: column;
@@ -154,9 +169,6 @@ a {
     width: 100%;
     height: 100%;
     padding-inline: 20px;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
 }
 
 
@@ -203,7 +215,7 @@ header {
 }
 
 
-/*--- Open menu button y Close menu button ---*/
+/*--- Open menu button and Close menu button ---*/
 .checked__box {
     display: none;
 }
@@ -217,7 +229,7 @@ header {
     border-radius: 5px;
     cursor: pointer;
     transform: scaleX(-1);
-    transition: filter 0.3s ease;
+    transition: filter .3s ease;
 }
 
 #header-open-nav-button:hover {
@@ -240,7 +252,7 @@ body.open-menu #header-open-nav-button {
 }
 
 
-/*---------- Navigation menu ----------*/
+/*---------- Navigation Menu ----------*/
 #header-nav {
     position: fixed;
     top: -15px;
@@ -365,25 +377,25 @@ body.open-menu #header-open-nav-button {
     display: block;
     width: 3px;
     height: 60px;
-    background: #fff;
     border-radius: 2px;
     opacity: 0.8;
+    background-color: var(--color-nonary);
 }
 
 #diamond,
 #diamond-outlined {
     width: 12px;
     height: 12px;
-    background: #fff;
-    transform: rotate(45deg);
     border-radius: 2px;
     opacity: 0.9;
+    background-color: var(--color-nonary);
+    transform: rotate(45deg);
 }
 
 #diamond-outlined {
-    background: transparent;
-    border: 2px solid #fff;
+    border: 2px solid var(--color-nonary);
     opacity: 0.9;
+    background-color: transparent;
 }
 
 
@@ -413,12 +425,12 @@ body.open-menu #header-open-nav-button {
 }
 
 #social-btn-github {
-    background-color: #b0bec5;
+    background-color: var(--color-tertiary);
 }
 
 #social-btn-linkedin {
     color: var(--color-nonary);
-    background-color: #222;
+    background-color: var(--color-tridecimal);
 }
 
 .social__btn i {
@@ -426,21 +438,21 @@ body.open-menu #header-open-nav-button {
 }
 
 
-/*---------- Botón para descargar pdf ----------*/
+/*---------- Button to download PDF ----------*/
 #cv-btn {
     width: 40px;
     height: 40px;
     border: none;
     border-radius: 8px;
     font-size: .9rem;
-    color: #fff;
+    color: var(--color-nonary);
     cursor: pointer;
-    background-color: #1EB908;
+    background-color: var(--color-secondary);
     transition: background-color .3s;
 }
 
 #cv-btn:hover {
-    background-color: #182e16;
+    background-color: var(--color-primary);
 }
 
 
@@ -506,18 +518,31 @@ body.open-menu #header-open-nav-button {
 }
 
 
-/*------------- MEDIA QUERIES: HEADER TABLET AND DESKTOP -------------*/
+/*------------- MEDIA QUERIES: HEADER AND HERO TABLET AND DESKTOP -------------*/
 @media (min-width: 768px) {
     #hero {
-        justify-content: space-between;
+        position: relative;
         padding: 0;
+    }
+
+    #hero-container {
+        flex-direction: row;
+        justify-content: flex-end;
         padding-right: 20px;
+    }
+
+    #hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        justify-content: flex-end;
+        width: 40vw;
+        border-radius: 0;
     }
 
     #hero-content {
         position: relative;
         width: clamp(300px, 40vw, 550px);
-        border-radius: 0;
     }
 
     header {
@@ -528,6 +553,7 @@ body.open-menu #header-open-nav-button {
         justify-content: space-between;
         align-items: center;
         width: 100vw;
+        max-width: 1440px;
         padding-inline: 20px 35px;
     }
 
@@ -639,6 +665,17 @@ body.open-menu #header-open-nav-button {
         text-align: left;
     }
 }
+
+@media (min-width: 1440px) {
+    #hero-links {
+        max-width: 1440px;
+        margin-right: calc((100vw - 1440px) / 2);
+    }
+
+    #cv-modal {
+        margin-right: calc((100vw - 1440px) / 2);
+    }
+}
 /*------------- END MEDIA QUERIES -------------*/
 
 
@@ -684,7 +721,7 @@ main {
 .services__title {
     width: fit-content;
     font-size: 2.2rem;
-    color: #182e16;
+    color: var(--color-primary);
 }
 
 .services__text {
@@ -820,7 +857,7 @@ main {
 
 #portfolio-title {
     font-size: 2.8rem;
-    color: #182e16;
+    color: var(--color-primary);
 }
 
 #portfolio-subtitle {
@@ -832,33 +869,6 @@ main {
 #portfolio-description {
     margin-top: 20px;
     color: var(--color-senary);
-}
-
-#images-services {
-    display: none;
-    justify-content: center;
-    align-items: flex-end;
-}
-
-#img-service-design {
-    position: relative;
-    left: 25px;
-    width: auto;
-    height: clamp(120px, 24.3vw, 300px);
-    object-fit: cover;
-    border: 5px solid var(--color-nonary);
-    border-radius: 5px;
-}
-
-#img-service-development {
-    position: relative;
-    bottom: 20px;
-    right: 25px;
-    width: clamp(180px, 36vw, 360px);
-    height: auto;
-    object-fit: cover;
-    border: 5px solid var(--color-nonary);
-    border-radius: 5px;
 }
 
 
@@ -928,7 +938,7 @@ main {
 
 .project__name {
     font-size: 1.2rem;
-    color: #1EB908;
+    color: var(--color-secondary);
 }
 
 .project__synopsis {
@@ -1007,7 +1017,7 @@ main {
 }
 
 
-/*------------- MEDIA QUERIES: SERVICES TABLET AND DESKTOP -------------*/
+/*------------- MEDIA QUERIES: PORTFOLIO TABLET AND DESKTOP -------------*/
 @media (min-width: 768px) {
     #portfolio-intro {
         flex-direction: row;
@@ -1050,9 +1060,10 @@ main {
 
 
 
-/*======================================
+/*==================================================
 =   SKILLS SECTION
-======================================*/
+=   The skills section is closed for future changes.
+==================================================*/
 
 .content__skills {
     display: none;
@@ -1070,7 +1081,7 @@ main {
     width: 100%;
     max-width: 1200px;
     font-size: 2.2rem;
-    color: #182e16;
+    color: var(--color-primary);
 }
 
 .skills__list--container {
@@ -1168,7 +1179,7 @@ main {
 #contact-title {
     width: 100%;
     font-size: 2.2rem;
-    color: #182e16;
+    color: var(--color-primary);
 }
 
 #contact-description {
@@ -1205,8 +1216,8 @@ main {
     padding: 7px;
     border-radius: 50%;
     object-fit: contain;
-    color: #182e16;
-    background-color: #1EB908;
+    color: var(--color-primary);
+    background-color: var(--color-secondary);
 }
 
 .contact__text--container {
@@ -1218,7 +1229,7 @@ main {
 
 .contact__text--container span {
     font-weight: 600;
-    color: #182e16;
+    color: var(--color-primary);
 }
 
 .contact__text--container small,
@@ -1256,7 +1267,7 @@ main {
 .input__group label {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #182e16;
+    color: var(--color-primary);
 }
 
 .input__group small {
@@ -1282,7 +1293,7 @@ main {
 
 .input__group input:focus,
 .input__group textarea:focus {
-    border-color: #1EB908;
+    border-color: var(--color-secondary);
 }
 
 .input__group input.valid,
@@ -1324,7 +1335,7 @@ main {
 }
 
 
-/*---------- Send button ----------*/
+/*---------- Send Button ----------*/
 #contact-button-container {
     display: flex;
     align-items: center;
@@ -1342,7 +1353,7 @@ main {
     font-weight: 900;
     letter-spacing: .1rem;
     text-decoration: none;
-    color: #182e16;
+    color: var(--color-primary);
     cursor: pointer;
     transition: all .3s;
 }
@@ -1367,7 +1378,7 @@ main {
     height: 100%;
     background-color: var(--color-tetradecimal);
     filter: brightness(95%);
-    transition: all .8s ease-in-out;
+    transition: all .8s ease-out;
 }
 
 #contact-button-container button:not(:disabled):hover::before {
@@ -1438,12 +1449,12 @@ footer {
     display: flex;
     justify-content: center;
     padding-top: 50px;
-    background: #111;
+    background-color: #111;
     backdrop-filter: blur(15px);
 }
 
 .footer__copy {
-    width: clamp(300px, 90%, 1200px);
+    width: clamp(300px, 90VW, 1200px);
     padding-block: 20px;
     border-top: 1px solid var(--color-quinary);
     font-size: .8rem;
