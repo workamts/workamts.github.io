@@ -1066,20 +1066,19 @@ main {
 ==================================================*/
 
 .content__skills {
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
     width: 100%;
     height: auto;
-    padding: 50px 30px;
+    padding: 70px 30px 50px;
     background-color: var(--color-decimal);
 }
 
 #skills-title {
     width: 100%;
-    max-width: 1200px;
     font-size: 2.2rem;
     color: var(--color-primary);
 }
@@ -1087,9 +1086,10 @@ main {
 .skills__list--container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 20px;
     width: auto;
+    max-width: 700px;
     height: auto;
 }
 
@@ -1100,10 +1100,10 @@ main {
     align-items: center;
     gap: 5px;
     padding: 20px;
-    border: 1px solid var(--color-quinary);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: 5px;
     cursor: pointer;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(15px);
     transition: transform .2s ease-in-out;
 }
@@ -1159,6 +1159,25 @@ main {
 .skills__item--container:hover .skills__item[aria-label="VSCode"] {
     filter: drop-shadow(0 0 10px var(--color-vscode)) !important;
 }
+
+.skills__item--label {
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--color-tridecimal);
+}
+
+
+/*---------- MEDIA QUERIES: SKILLS FOR TABLET AND DESKTOP ----------*/
+@media (min-width: 768px) {
+    #skills-title {
+        width: auto;
+    }
+
+    .skills__list--container {
+        justify-content: center;
+    }
+}
+/*---------- END MEDIA QUERIES ----------*/
 
 
 
@@ -1388,6 +1407,17 @@ main {
 
 /*---------- MEDIA QUERIES: CONTACT FOR TABLET AND DESKTOP ----------*/
 @media (min-width: 768px) {
+    #contact-title,
+    .contact__methods {
+        width: auto;
+    }
+
+    #contact-description {
+        width: 400px;
+        margin-top: 10px;
+        text-align: center;
+    }
+
     #contact-content {
         flex-direction: row;
         justify-content: space-between;
@@ -1396,21 +1426,11 @@ main {
         max-width: 1024px;
         margin-top: 50px;
     }
-    #contact-title,
-    .contact__methods {
-        width: auto;
-        margin: 0;
-    }
 
     .contact__methods {
         flex-direction: column;
         flex-wrap: nowrap;
-    }
-
-    #contact-description {
-        width: 400px;
-        margin-top: 10px;
-        text-align: center;
+        margin: 0;
     }
 
     #contact-form {
@@ -1429,7 +1449,6 @@ main {
         flex-wrap: wrap;
         width: 68%;
     }
-
 
     .input__group.i1,
     .input__group.i2 {
