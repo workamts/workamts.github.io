@@ -7,38 +7,41 @@ Aquí encontrarás mis proyectos principales, desarrollados con un enfoque en **
 
 ### About Me
 
-Soy **Anderson Tovar**, también conocido como **workamts**.
-Me especializo en el diseño y desarrollo de **interfaces modernas, limpias y adaptables**, trabajando principalmente con **HTML5, CSS3 y JavaScript (ES6+)**, complementado con **Bootstrap** y buenas prácticas de **UI/UX**.
+Soy **Anderson Tovar (workamts)**, un **Frontend Designer & Developer** autodidacta con experiencia práctica en la creación de sitios web **modernos, responsivos y accesibles** mediante proyectos personales y académicos.
 
-**Mis intereses incluyen:**
+Trabajo principalmente con **HTML5, CSS3, JavaScript (ES6+) y Bootstrap**, complementado con **React** y diseño **UI/UX en Figma**, lo que me permite desarrollar interfaces limpias, funcionales y centradas en la experiencia del usuario.
 
-- Desarrollo de landing pages, portafolios, e-commerce y aplicaciones web estáticas.
-- Optimización de rendimiento y mejora de la experiencia del usuario.
-- Accesibilidad web siguiendo lineamientos **WCAG**.
-- Código modular, mantenible y alineado con estándares.
+A lo largo de mis proyectos he construido **landing pages, portafolios, tiendas online y sitios informativos**, siempre con un enfoque en:
+
+- **Optimización de rendimiento** para experiencias rápidas y eficientes.
+- **Accesibilidad y usabilidad**, siguiendo lineamientos inclusivos.
+- **Código semántico, modular y mantenible**, alineado con buenas prácticas y estándares web.
+
+Me considero una persona **responsable, proactiva y con gran entusiasmo por aprender nuevas tecnologías**.
+Mi objetivo es seguir creciendo como desarrollador frontend y aportar **creatividad, compromiso y soluciones escalables** que generen un impacto real en cada proyecto.
 
 ---
 
-<img src="https://raw.githubusercontent.com/workamts/workamts.github.io/main/assets/img/hero-preview.png" alt="Hero Preview" width="800">
+<img src="/assets/images/workamts.github.io.png" alt="Hero Preview" width="800">
 
 ---
 
 ### Technologies & Skills
 
-- **Core:** HTML5, CSS3, JavaScript (ES6+).
-- **Frameworks & Tools:** Bootstrap, Git, GitHub, Figma.
+- **Core:** HTML5, CSS3, JavaScript (ES6+), Figma.
+- **Frameworks & Tools:** Bootstrap, React, Git, GitHub.
 - **Practices:** Responsive Design, Web Accessibility, Semantic HTML, SEO básico, Performance Optimization.
 
 ---
 
 ### Featured Projects
 
-| Project                                  | Description                                                                                                        | Demo Link                                                  | Preview                                                                                                                                    |
-| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| **EcoCafé**                              | Tienda online ficticia de café orgánico. Incluye carrito de compras, gestión de inventario y validación de compra. | [Ver Proyecto](https://workamts.github.io/ecocafe)         | <img src="https://raw.githubusercontent.com/workamts/workamts.github.io/main/assets/img/ecocafe.png" alt="EcoCafé" width="250">            |
-| **JavaScript From Scratch**              | Landing page educativa con ejemplos interactivos. Demuestra conceptos básicos e intermedios de JavaScript.         | [Ver Proyecto](https://workamts.github.io/js-from-scratch) | <img src="https://raw.githubusercontent.com/workamts/workamts.github.io/main/assets/img/js-scratch.png" alt="JS From Scratch" width="250"> |
-| **Penseive**                             | SPA minimalista para escritura personal con entrada de texto y voz. Almacenamiento local y diseño accesible.       | [Ver Proyecto](https://workamts.github.io/penseive)        | <img src="https://raw.githubusercontent.com/workamts/workamts.github.io/main/assets/img/penseive.png" alt="Penseive" width="250">          |
-| **Ink – Generador de Paleta de Colores** | Herramienta web para crear paletas de colores. Minimalista, responsiva y pensada para diseñadores y devs.          | [Ver Proyecto](https://workamts.github.io/ink)             | <img src="https://raw.githubusercontent.com/workamts/workamts.github.io/main/assets/img/ink.png" alt="Ink Project" width="250">            |
+| Project                                  | Description                                                                                                        | Demo Link                                                  | Preview                                                                             |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| **EcoCafé**                              | Tienda online ficticia de café orgánico. Incluye carrito de compras, gestión de inventario y validación de compra. | [Ver Proyecto](https://workamts.github.io/ecocafe)         | <img src="/assets/images/vista principal de EcoCafe.png" alt="EcoCafé" width="250"> |
+| **JavaScript From Scratch**              | Landing page educativa con ejemplos interactivos. Demuestra conceptos básicos e intermedios de JavaScript.         | [Ver Proyecto](https://workamts.github.io/js-from-scratch) | <img src="/assets/images/pc-hero-section.png" alt="JS From Scratch" width="250">    |
+| **Penseive**                             | SPA minimalista para escritura personal con entrada de texto y voz. Almacenamiento local y diseño accesible.       | [Ver Proyecto](https://workamts.github.io/penseive)        | <img src="/assets/images/pc-light-default-view.png" alt="Penseive" width="250">     |
+| **Ink – Generador de Paleta de Colores** | Herramienta web para crear paletas de colores. Minimalista, responsiva y pensada para diseñadores y devs.          | [Ver Proyecto](https://workamts.github.io/ink)             | <img src="/assets/images/pc-hero.png" alt="Ink Project" width="250">                |
 
 ---
 
@@ -46,13 +49,10 @@ Me especializo en el diseño y desarrollo de **interfaces modernas, limpias y ad
 
 Si deseas colaborar o conocer más sobre mi trabajo, puedes contactarme a través de:
 
-- **Email:** workamts.dev@gmail.com
-- **WhatsApp:** +57 313 802 5867
+- **Email:** [workamts.dev@gmail.com](mailto:workamts.dev@gmail.com)
+- **WhatsApp:** [+57 312 469 6123](https://wa.me/573124696123)
 - **Portfolio:** [workamts.github.io](https://workamts.github.io)
 - **LinkedIn:** [linkedin.com/in/workamts](https://www.linkedin.com/in/workamts)
-
-**También disponible en plataformas freelance:**
-Upwork · Freelancer · Fiverr · Workana
 
 ---
 
