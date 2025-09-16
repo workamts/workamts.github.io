@@ -1,74 +1,70 @@
 # Portafolio Frontend Profesional – Anderson Tovar (workamts)
 
-Welcome to my portfolio as an **Independent Frontend Developer**.  
-Here you’ll find my main web projects, focused on quality, performance, responsive design, and best practices.
+Bienvenido a mi portafolio como **Frontend Designer & Developer**.
+Aquí encontrarás mis proyectos principales, desarrollados con un enfoque en **rendimiento, accesibilidad, código semántico y diseño responsivo**.
 
 ---
 
-## About Me
+### About Me
 
-I’m Anderson Tovar, also known as **workamts**, a frontend developer focused on building efficient, modern, and accessible web experiences.  
-I work with **HTML, CSS y JavaScript**. I’m also skilled in performance tools, optimization, development best practices, security, and component-based architecture.
+Soy **Anderson Tovar**, también conocido como **workamts**.
+Me especializo en el diseño y desarrollo de **interfaces modernas, limpias y adaptables**, trabajando principalmente con **HTML5, CSS3 y JavaScript (ES6+)**, complementado con **Bootstrap** y buenas prácticas de **UI/UX**.
 
----
+**Mis intereses incluyen:**
 
-## This Website
-
-This repository contains the source code for my personal portfolio, published at:
-**[https://workamts.github.io](https://workamts.github.io)**
-
-### Sections
-
-- Hero with introduction  
-- About me  
-- Featured projects
-- Technical skills  
-- Contact form  
-- Fully responsive design (mobile to desktop)
+- Desarrollo de landing pages, portafolios, e-commerce y aplicaciones web estáticas.
+- Optimización de rendimiento y mejora de la experiencia del usuario.
+- Accesibilidad web siguiendo lineamientos **WCAG**.
+- Código modular, mantenible y alineado con estándares.
 
 ---
 
-## Technologies Used
-
-- Semantic HTML5  
-- CSS3 with variables and adaptive design  
-- Modern JavaScript (ES6+)  
-- Web accessibility, Performance Optimization and basic SEO
+<img src="https://raw.githubusercontent.com/workamts/workamts.github.io/main/assets/img/hero-preview.png" alt="Hero Preview" width="800">
 
 ---
 
-## Included Projects
+### Technologies & Skills
 
-| Project           | Description                                                                                              | Link                                                                 |
-|-----------------------------|------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------|
-| **EcoCafé**                 | Fictional online store selling organic coffee. Inventory management, shopping cart, and purchase validation.                 | [View Project](https://workamts.github.io/ecocafe/) |
-| **JavaScript From Scratch** | Educational landing page with interactive buttons. Focused on demonstrating JavaScript knowledge from scratch.           | [View Project](https://workamts.github.io/javascript-from-scratch/)|
-| **Penseive**                | SPA for personal writing with text or voice input. Stores data locally. Minimalist and accessible design.  | [View Project](https://workamts.github.io/pensieve/) |
+- **Core:** HTML5, CSS3, JavaScript (ES6+).
+- **Frameworks & Tools:** Bootstrap, Git, GitHub, Figma.
+- **Practices:** Responsive Design, Web Accessibility, Semantic HTML, SEO básico, Performance Optimization.
 
 ---
 
-## Contact
-If you’d like to work with me or see more of my work:
+### Featured Projects
 
-**Email:** [workamts.dev@gmail.com](mailto:workamts.dev@gmail.com)  
-**WhatsApp:** [+57 313 802 5867](https://wa.me/573138025867)  
-**Portfolio:** [https://workamts.github.io](https://workamts.github.io)  
-**LinkedIn:** [https://www.linkedin.com/in/workamts](https://www.linkedin.com/in/workamts)  
-**Upwork:** [https://www.upwork.com/freelancers/~0179a587deec28a4ba](https://www.upwork.com/freelancers/~0179a587deec28a4ba)  
-**Freelancer:** [https://www.freelancer.com/u/Workamts](https://www.freelancer.com/u/Workamts)  
-**Fiverr:** [https://www.fiverr.com/workamts](https://www.fiverr.com/workamts)  
-**Workana:** [https://www.workana.com/freelancer/fcf206ab3db30166087855a1bce7e1d2](https://www.workana.com/freelancer/fcf206ab3db30166087855a1bce7e1d2)  
+| Project                                  | Description                                                                                                        | Demo Link                                                  | Preview                                                                                                                                    |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| **EcoCafé**                              | Tienda online ficticia de café orgánico. Incluye carrito de compras, gestión de inventario y validación de compra. | [Ver Proyecto](https://workamts.github.io/ecocafe)         | <img src="https://raw.githubusercontent.com/workamts/workamts.github.io/main/assets/img/ecocafe.png" alt="EcoCafé" width="250">            |
+| **JavaScript From Scratch**              | Landing page educativa con ejemplos interactivos. Demuestra conceptos básicos e intermedios de JavaScript.         | [Ver Proyecto](https://workamts.github.io/js-from-scratch) | <img src="https://raw.githubusercontent.com/workamts/workamts.github.io/main/assets/img/js-scratch.png" alt="JS From Scratch" width="250"> |
+| **Penseive**                             | SPA minimalista para escritura personal con entrada de texto y voz. Almacenamiento local y diseño accesible.       | [Ver Proyecto](https://workamts.github.io/penseive)        | <img src="https://raw.githubusercontent.com/workamts/workamts.github.io/main/assets/img/penseive.png" alt="Penseive" width="250">          |
+| **Ink – Generador de Paleta de Colores** | Herramienta web para crear paletas de colores. Minimalista, responsiva y pensada para diseñadores y devs.          | [Ver Proyecto](https://workamts.github.io/ink)             | <img src="https://raw.githubusercontent.com/workamts/workamts.github.io/main/assets/img/ink.png" alt="Ink Project" width="250">            |
 
 ---
 
-## Run Locally
+### Contact
+
+Si deseas colaborar o conocer más sobre mi trabajo, puedes contactarme a través de:
+
+- **Email:** workamts.dev@gmail.com
+- **WhatsApp:** +57 313 802 5867
+- **Portfolio:** [workamts.github.io](https://workamts.github.io)
+- **LinkedIn:** [linkedin.com/in/workamts](https://www.linkedin.com/in/workamts)
+
+**También disponible en plataformas freelance:**
+Upwork · Freelancer · Fiverr · Workana
+
+---
+
+### Run Locally
 
 ```bash
+# Clonar repositorio
 git clone https://github.com/workamts/workamts.github.io.git
+
+# Abrir carpeta del proyecto
 cd workamts.github.io
+
+# Ejecutar localmente
 open index.html
-css
-Copiar
-Editar
-
-
+```
