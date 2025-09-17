@@ -1,24 +1,24 @@
-# Portafolio Frontend Profesional – Anderson Tovar (workamts)
+# Professional Frontend Portfolio – Anderson Tovar (workamts)
 
-Bienvenido a mi portafolio como **Frontend Designer & Developer**.
-Aquí encontrarás mis proyectos principales, desarrollados con un enfoque en **rendimiento, accesibilidad, código semántico y diseño responsivo**.
+Welcome to my portfolio as a **Frontend Designer & Developer**.
+Here you'll find my main projects, developed with a focus on **performance, accessibility, semantic code, and responsive design**.
 
 ---
 
 ### About Me
 
-Soy **Anderson Tovar (workamts)**, un **Frontend Designer & Developer** autodidacta con experiencia práctica en la creación de sitios web **modernos, responsivos y accesibles** mediante proyectos personales y académicos.
+I'm **Anderson Tovar (workamts)**, a self-taught **Frontend Designer & Developer** with hands-on experience creating **modern, responsive, and accessible** websites through personal and academic projects.
 
-Trabajo principalmente con **HTML5, CSS3, JavaScript (ES6+) y Bootstrap**, complementado con **React** y diseño **UI/UX en Figma**, lo que me permite desarrollar interfaces limpias, funcionales y centradas en la experiencia del usuario.
+I mainly work with **HTML5, CSS3, JavaScript (ES6+), and Bootstrap**, complemented by **React** and **UI/UX design in Figma**, allowing me to build clean, functional interfaces focused on user experience.
 
-A lo largo de mis proyectos he construido **landing pages, portafolios, tiendas online y sitios informativos**, siempre con un enfoque en:
+Throughout my projects, I've built **landing pages, portfolios, online stores, and informational sites**, always focusing on:
 
-- **Optimización de rendimiento** para experiencias rápidas y eficientes.
-- **Accesibilidad y usabilidad**, siguiendo lineamientos inclusivos.
-- **Código semántico, modular y mantenible**, alineado con buenas prácticas y estándares web.
+- **Performance optimization** for fast and efficient experiences.
+- **Accessibility and usability**, following inclusive guidelines.
+- **Semantic, modular, and maintainable code**, aligned with best practices and web standards.
 
-Me considero una persona **responsable, proactiva y con gran entusiasmo por aprender nuevas tecnologías**.
-Mi objetivo es seguir creciendo como desarrollador frontend y aportar **creatividad, compromiso y soluciones escalables** que generen un impacto real en cada proyecto.
+I consider myself a **responsible, proactive person with great enthusiasm for learning new technologies**.
+My goal is to keep growing as a frontend developer and contribute **creativity, commitment, and scalable solutions** that make a real impact in every project.
 
 ---
 
@@ -30,24 +30,24 @@ Mi objetivo es seguir creciendo como desarrollador frontend y aportar **creativi
 
 - **Core:** HTML5, CSS3, JavaScript (ES6+), Figma.
 - **Frameworks & Tools:** Bootstrap, React, Git, GitHub.
-- **Practices:** Responsive Design, Web Accessibility, Semantic HTML, SEO básico, Performance Optimization.
+- **Practices:** Responsive Design, Web Accessibility, Semantic HTML, Basic SEO, Performance Optimization.
 
 ---
 
 ### Featured Projects
 
-| Project                                  | Description                                                                                                        | Demo Link                                                          | Preview                                                                             |
-| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
-| **EcoCafé**                              | Tienda online ficticia de café orgánico. Incluye carrito de compras, gestión de inventario y validación de compra. | [Ver Proyecto](https://workamts.github.io/ecocafe)                 | <img src="/assets/images/vista principal de EcoCafe.png" alt="EcoCafé" width="250"> |
-| **JavaScript From Scratch**              | Landing page educativa con ejemplos interactivos. Demuestra conceptos básicos e intermedios de JavaScript.         | [Ver Proyecto](https://workamts.github.io/javascript-from-scratch) | <img src="/assets/images/pc-hero-section.png" alt="JS From Scratch" width="250">    |
-| **Penseive**                             | SPA minimalista para escritura personal con entrada de texto y voz. Almacenamiento local y diseño accesible.       | [Ver Proyecto](https://workamts.github.io/pensieve)                | <img src="/assets/images/pc-light-default-view.png" alt="Penseive" width="250">     |
-| **Ink – Generador de Paleta de Colores** | Herramienta web para crear paletas de colores. Minimalista, responsiva y pensada para diseñadores y devs.          | [Ver Proyecto](https://workamts.github.io/ink)                     | <img src="/assets/images/pc-hero.png" alt="Ink Project" width="250">                |
+| Project                           | Description                                                                                                   | Demo Link                                                          | Preview                                                                             |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
+| **EcoCafé**                       | Fictional organic coffee online store. Includes shopping cart, inventory management, and purchase validation. | [View Project](https://workamts.github.io/ecocafe)                 | <img src="/assets/images/vista principal de EcoCafe.png" alt="EcoCafé" width="250"> |
+| **JavaScript From Scratch**       | Educational landing page with interactive examples. Demonstrates basic and intermediate JavaScript concepts.  | [View Project](https://workamts.github.io/javascript-from-scratch) | <img src="/assets/images/pc-hero-section.png" alt="JS From Scratch" width="250">    |
+| **Penseive**                      | Minimalist SPA for personal writing with text and voice input. Local storage and accessible design.           | [View Project](https://workamts.github.io/pensieve)                | <img src="/assets/images/pc-light-default-view.png" alt="Penseive" width="250">     |
+| **Ink – Color Palette Generator** | Web tool to create color palettes. Minimalist, responsive, and designed for designers and devs.               | [View Project](https://workamts.github.io/ink)                     | <img src="/assets/images/pc-hero.png" alt="Ink Project" width="250">                |
 
 ---
 
 ### Contact
 
-Si deseas colaborar o conocer más sobre mi trabajo, puedes contactarme a través de:
+If you want to collaborate or learn more about my work, you can contact me through:
 
 - **Email:** [workamts.dev@gmail.com](mailto:workamts.dev@gmail.com)
 - **WhatsApp:** [+57 312 469 6123](https://wa.me/573124696123)
@@ -59,12 +59,12 @@ Si deseas colaborar o conocer más sobre mi trabajo, puedes contactarme a travé
 ### Run Locally
 
 ```bash
-# Clonar repositorio
+# Clone repository
 git clone https://github.com/workamts/workamts.github.io.git
 
-# Abrir carpeta del proyecto
+# Open project folder
 cd workamts.github.io
 
-# Ejecutar localmente
+# Run locally
 open index.html
 ```
