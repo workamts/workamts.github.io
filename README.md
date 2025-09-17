@@ -17,9 +17,6 @@ Throughout my projects, I've built **landing pages, portfolios, online stores, a
 - **Accessibility and usability**, following inclusive guidelines.
 - **Semantic, modular, and maintainable code**, aligned with best practices and web standards.
 
-I consider myself a **responsible, proactive person with great enthusiasm for learning new technologies**.
-My goal is to keep growing as a frontend developer and contribute **creativity, commitment, and scalable solutions** that make a real impact in every project.
-
 ---
 
 <img src="/assets/images/workamts.github.io.png" alt="Hero Preview" width="800">
