@@ -19,7 +19,7 @@ Throughout my projects, I've built **landing pages, portfolios, online stores, a
 
 ---
 
-<img src="/assets/images/workamts.github.io.png" alt="Hero Preview" width="800">
+<img src="/assets/images/portfolio.png" alt="Hero Preview" width="800">
 
 ---
 
@@ -33,12 +33,12 @@ Throughout my projects, I've built **landing pages, portfolios, online stores, a
 
 ### Featured Projects
 
-| Project                           | Description                                                                                                   | Demo Link                                                          | Preview                                                                             |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
-| **EcoCafé**                       | Fictional organic coffee online store. Includes shopping cart, inventory management, and purchase validation. | [View Project](https://workamts.github.io/ecocafe)                 | <img src="/assets/images/vista principal de EcoCafe.png" alt="EcoCafé" width="250"> |
-| **JavaScript From Scratch**       | Educational landing page with interactive examples. Demonstrates basic and intermediate JavaScript concepts.  | [View Project](https://workamts.github.io/javascript-from-scratch) | <img src="/assets/images/pc-hero-section.png" alt="JS From Scratch" width="250">    |
-| **Penseive**                      | Minimalist SPA for personal writing with text and voice input. Local storage and accessible design.           | [View Project](https://workamts.github.io/pensieve)                | <img src="/assets/images/pc-light-default-view.png" alt="Penseive" width="250">     |
-| **Ink – Color Palette Generator** | Web tool to create color palettes. Minimalist, responsive, and designed for designers and devs.               | [View Project](https://workamts.github.io/ink)                     | <img src="/assets/images/pc-hero.png" alt="Ink Project" width="250">                |
+| Project                           | Description                                                                                                   | Demo Link                                                          | Preview                                                                          |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
+| **EcoCafé**                       | Fictional organic coffee online store. Includes shopping cart, inventory management, and purchase validation. | [View Project](https://workamts.github.io/ecocafe)                 | <img src="/assets/images/ecocafe.png" alt="EcoCafé" width="250">                 |
+| **JavaScript From Scratch**       | Educational landing page with interactive examples. Demonstrates basic and intermediate JavaScript concepts.  | [View Project](https://workamts.github.io/javascript-from-scratch) | <img src="/assets/images/js-from-scratch.png" alt="JS From Scratch" width="250"> |
+| **Penseive**                      | Minimalist SPA for personal writing with text and voice input. Local storage and accessible design.           | [View Project](https://workamts.github.io/pensieve)                | <img src="/assets/images/penseive.png" alt="Penseive" width="250">               |
+| **Ink – Color Palette Generator** | Web tool to create color palettes. Minimalist, responsive, and designed for designers and devs.               | [View Project](https://workamts.github.io/ink)                     | <img src="/assets/images/ink.png" alt="Ink Project" width="250">                 |
 
 ---
 
