@@ -1235,7 +1235,7 @@ main {
     padding: 7px;
     border-radius: 50%;
     object-fit: contain;
-    color: var(--color-primary);
+    color: var(--color-tetradecimal);
     background-color: var(--color-secondary);
 }
 
