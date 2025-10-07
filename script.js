@@ -4,6 +4,97 @@
 ==============================*/
 
 
+/*==============================
+=   Click Sparks Effect
+==============================*/
+
+const canvas = document.getElementById("spark-canvas");
+const ctx = canvas.getContext("2d");
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+const sparkColor = "#1eb908";
+const sparkSize = 10;
+const sparkRadius = 15;
+const sparkCount = 8;
+const duration = 400;
+const easing = "ease-out";
+const extraScale = 1.0;
+
+// Active spark arrangement
+let sparks = [];
+
+// Easing function
+function easeFunc(t) {
+    switch (easing) {
+        case "linear": return t;
+        case "ease-in": return t * t;
+        case "ease-in-out": return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+        default: return t * (2 - t); // ease-out
+    }
+}
+
+// Draw sparks (lines)
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const now = performance.now();
+
+    sparks = sparks.filter(spark => {
+        const elapsed = now - spark.startTime;
+        if (elapsed >= duration) return false;
+
+        const progress = elapsed / duration;
+        const eased = easeFunc(progress);
+
+        const distance = eased * sparkRadius * extraScale;
+        const lineLength = sparkSize * (1 - eased);
+
+        const halfLine = lineLength / 2;
+        const x1 = spark.x + (distance - halfLine) * Math.cos(spark.angle);
+        const y1 = spark.y + (distance - halfLine) * Math.sin(spark.angle);
+        const x2 = spark.x + (distance + halfLine) * Math.cos(spark.angle);
+        const y2 = spark.y + (distance + halfLine) * Math.sin(spark.angle);
+
+        ctx.strokeStyle = sparkColor;
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.stroke();
+
+        return true;
+    });
+
+    requestAnimationFrame(draw);
+}
+
+// Continuous animation
+requestAnimationFrame(draw);
+
+// Create sparks on click
+document.addEventListener("click", (e) => {
+    const offsetX = 12;
+    const offsetY = 0;
+    const x = e.clientX + offsetX;
+    const y = e.clientY + offsetY;
+    const now = performance.now();
+
+    for (let i = 0; i < sparkCount; i++) {
+        sparks.push({
+            x,
+            y,
+            angle: (2 * Math.PI * i) / sparkCount,
+            startTime: now,
+        });
+    }
+});
+
+
 
 /*======================================
 =   DELETE SCROLLX AND
